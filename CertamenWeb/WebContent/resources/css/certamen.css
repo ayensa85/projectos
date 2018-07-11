@@ -1,0 +1,133 @@
+.nf {
+	clear: both;
+}
+
+p {
+	margin: 10px 15%;
+	color: #69a8d9;
+	font-family: "Mi fuente embebida";
+	font-weight: bold;
+	text-align: justify;
+}
+
+p#sin_padding {
+	margin: auto 0px;
+}
+
+div#form_container {
+	font-family: "Mi fuente embebida";
+	background-color: "../images/formimage.jpg";
+	font-weight: bold;
+	margin: 10px 19%;
+}
+
+div#slide_galeria {
+	width: 100%;
+}
+
+div#contenido_pestanas {
+	width: 100%;
+	height: 1100px;
+	background: #fff;
+	
+}
+
+                               
+	
+	div p{
+		padding-left: 4.5%;
+		padding-right: 6%;
+	}
+	nav{
+		height: 5%;
+		margin: 0 15%;
+	}
+	nav ul{
+		
+		list-style: none;
+		max-width: 960px;
+		margin: 0 8%;
+	}
+	nav ul li{
+		display: inline-block;
+		margin: 2%;		
+		}
+		iframe{
+			
+			padding-left: 1%;
+			
+		}
+	nav ul li a{
+		color: #fff;
+		display: block;
+		font-family: verdana;
+		height: 13px;
+		line-height: 13px;
+		padding: 8px;
+		text-transform: uppercase;
+		transition: all 0.5s ease-in;
+		-webkit-transition: all 0.5s ease-in;
+		-moz-transition: all 0.5s ease-in;
+	-ms-transition: all 0.5s ease-in;
+	-o-transition: all 0.5s ease-in;
+}
+	nav ul li a img{
+		height: 40px;
+		width: 80px
+		
+	}
+	ul{
+		list-style: none;
+	}
+	section#galeria{
+		margin: 50px 10%;
+	}
+
+	
+div#contenido-footer{
+		margin: 3% 40%;		
+	}
+iframe#reproductor{
+	margin: 5% 18.5%;
+}
+ #contenido_pestanas ul  {   display: block; height: 18px;
+ 								margin: 2% 30%;
+ 
+ }
+ #contenido_pestanas a {   float: left; padding: 5px 20px; list-style: none; border: 1px solid #999;   } 
+ #contenido_pestanas a:hover  {   background-color: #999; color: #FFF;} 
+ #contenido_pestanas a.aqui  {   background-color: #333; color: #FFF; box-shadow: 3px 0px 2px #ccc; 
+                                     -webkit-box-shadow: 3px 0px 2px #ccc; -moz-box-shadow: 3px 0px 2px #ccc;}
+                                     
+   div#opcion1{
+	heigh:1500px;
+	width:80%;
+	
+}     
+ div#opcion2{
+ 
+	heigh:1500px;
+	width:80%;
+	
+}     
+ div#opcion3{
+	heigh:1500px;
+	width:80%;
+	
+}     
+ div#opcion4{
+	heigh:1500px;
+	width:80%;
+
+}   
+
+section#login{
+	
+	float:center;
+}  
+
+.reproductores{
+	margin:auto 2%;
+	
+}
+
