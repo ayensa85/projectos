@@ -1,8 +1,10 @@
 server:
-  port: 9090
-  #EurekaClient
-  
+#  port: 8089
+config:
+  saludo: Hola curso JAVA!!
+
+#EUREKA
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka
