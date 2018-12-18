@@ -3,20 +3,16 @@ package tajador.certamen.controller;
 import java.io.InputStream;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.StringTrimmerEditor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.Errors;
-import org.springframework.web.bind.ServletRequestDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,6 +29,9 @@ public class IndexController {
 	
 
 	private static Logger logger = Logger.getLogger(IndexController.class);
+	
+	@Value("certamen.edicion")
+	String edicion;
 
 	@Autowired
 	GrupoService grupoService;
@@ -166,6 +165,7 @@ public class IndexController {
 		} 
 		 else {
 			try {
+				participante.setEdicion(Integer.parseInt(edicion));
 				IntegerWrapper correcto = new IntegerWrapper(Integer.valueOf(grupoService.guardarGrupo(participante)));
 				ra.addFlashAttribute("participanteAniadido", correcto);
 			} catch (Exception e) {

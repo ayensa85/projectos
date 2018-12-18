@@ -26,7 +26,6 @@ public class GrupoService {
 		try {
 			Grupo participante = new Grupo();
 			BeanUtils.copyProperties(grupo, participante);
-			participante.setEdicion(23);
 			grupoDao.saveAndFlush(participante);
 		} catch (UnexpectedRollbackException ex) {
 			if (ex.getMostSpecificCause() instanceof SQLIntegrityConstraintViolationException) {

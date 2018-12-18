@@ -137,6 +137,7 @@
 							</form:select>
 						</div>
 					</div>
+					<form:hidden path="edicion"/>
 					<div class="form-group">
 						<label for="componentes" class="control-label col-xs-2">Numero
 							de componentes</label>

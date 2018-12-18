@@ -47,12 +47,15 @@ public class GrupoDTO {
 	@NotEmpty
 	@URL
 	private String cancion4;
+	
+	private Integer edicion;
+	
 	@NotEmpty
 	private byte[] pic;
 
 	public GrupoDTO(@NotBlank String nombreGrupo, @NotBlank String nombre, @NotBlank String provincia,
 			@NotNull int componentes, @NotBlank String telefono, String youtube, String email, String intagram, String facebook,
-			String twitter, @NotBlank String cancion1, @NotBlank String cancion2, @NotBlank String cancion3,
+			String twitter, @NotBlank String cancion1, @NotBlank String cancion2, @NotBlank String cancion3, Integer edicion, 
 			@NotBlank String cancion4, @NotNull byte[] pic) {
 		this.nombreGrupo = nombreGrupo;
 		this.nombre = nombre;
@@ -68,13 +71,21 @@ public class GrupoDTO {
 		this.cancion2 = cancion2;
 		this.cancion3 = cancion3;
 		this.cancion4 = cancion4;
+		this.edicion = edicion;
 		this.pic = pic;
 	}
 
 	public GrupoDTO() {
 	}
 	
-	
+
+	public Integer getEdicion() {
+		return edicion;
+	}
+
+	public void setEdicion(Integer edicion) {
+		this.edicion = edicion;
+	}
 
 	public String getEmail() {
 		return email;
