@@ -30,10 +30,6 @@
 								<li><a href="${pageContext.request.contextPath}/certamen/comollegar"><spring:message code="menu.certamen.llegar"/></a></li>
 								<li><a href="${pageContext.request.contextPath}/certamen/alojamiento"><spring:message code="menu.certamen.alojamiento"/></a></li>
 								<li><a href="${pageContext.request.contextPath}/certamen/bases"><spring:message code="menu.participar"/></a></li>
-<!-- 								<li role="separator" class="divider"></li> -->
-<!-- 								<li><a href="#">Separated link</a></li> -->
-<!-- 								<li role="separator" class="divider"></li> -->
-<!-- 								<li><a href="#">One more separated link</a></li> -->
 							</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
