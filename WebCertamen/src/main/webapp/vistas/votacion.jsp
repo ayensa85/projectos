@@ -26,7 +26,7 @@
 
 <body>
 	<!-- PArte que mueve los componentes javasript de boostrap -->
-	
+
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script
@@ -35,9 +35,20 @@
 		crossorigin="anonymous"></script>
 
 	<%@include file="common/menu.jsp"%>
-	
-	<div class="row"></div>
-	
+
+	<c:forEach items="${participantes}" var="participante">
+		<div class="row"><div class="col-lg-4">
+			<img src="data:image/jpg;base64, ${participante.base64pic}" />
+		
+		</div>
+		<div class="row"><div class="col-lg-8">
+			<p>aaaaaaaaaaaaaaaaaaa</p>
+		
+		</div>
+	</c:forEach>
+
+
+
 
 	<%@include file="common/footer.jsp"%>
 

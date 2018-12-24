@@ -19,8 +19,6 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-
-						
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false"><spring:message code="menu.certamen"/><span class="caret"></span></a>
@@ -51,15 +49,15 @@
 					<li><a href="#"><spring:message code="menu.horarios"/></a></li>
 					<li><a href="#"><spring:message code="menu.prensa"/></a></li>
 					
-					<form class="navbar-form navbar-right">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="email">
-							<input type="text" class="form-control" placeholder="pass">
-						</div>
-						<button type="submit" class="btn btn-default">Submit</button>
-					</form>
 						
 					</ul>
+						<form class="navbar-form navbar-right">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="email">
+								<input type="text" class="form-control" placeholder="pass">
+							</div>
+							<button type="submit" class="btn btn-default">Submit</button>
+						</form>
 					
 						
 				</div>
