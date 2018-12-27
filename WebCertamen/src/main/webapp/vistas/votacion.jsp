@@ -35,17 +35,20 @@
 		crossorigin="anonymous"></script>
 
 	<%@include file="common/menu.jsp"%>
-
+	
+	<div class="container separador marketing">
 	<c:forEach items="${participantes}" var="participante">
-		<div class="row"><div class="col-lg-4">
-			<img src="data:image/jpg;base64, ${participante.base64pic}" />
-		
-		</div>
-		<div class="row"><div class="col-lg-8">
-			<p>aaaaaaaaaaaaaaaaaaa</p>
-		
+		<div class="row separador">
+			<div class="col-lg-6">
+				<img src="${pageContext.request.contextPath}/myImage/imageDisplay?id=${participante.id}"/>
+			</div>
+			<div class="col-lg-6">
+				<p>aaaaaaaaaaaaaaaaaaa</p>
+
+			</div>
 		</div>
 	</c:forEach>
+	</div>
 
 
 

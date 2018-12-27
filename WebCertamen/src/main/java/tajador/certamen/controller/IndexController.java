@@ -30,7 +30,7 @@ public class IndexController {
 
 	private static Logger logger = Logger.getLogger(IndexController.class);
 	
-	@Value("certamen.edicion")
+	@Value("${certamen.edicion}")
 	String edicion;
 
 	@Autowired

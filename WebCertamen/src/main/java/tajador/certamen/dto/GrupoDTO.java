@@ -2,6 +2,8 @@ package tajador.certamen.dto;
 
 
 
+import java.util.Arrays;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
@@ -11,6 +13,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 
 public class GrupoDTO {
+	
+	private Long id;
 
 	@NotEmpty
 	private String nombreGrupo;
@@ -23,14 +27,16 @@ public class GrupoDTO {
 	@NotEmpty
 	@Pattern(regexp="([69][0-9]{8})", message="{formato.incorrecto}")
 	private String telefono;
+	
+	@NotEmpty
+	@Email
+	private String email;
 
 	private String youtube;
 
 	private String intagram;
 	
-	@NotEmpty
-	@Email
-	private String email;
+
 
 	private String facebook;
 
@@ -52,6 +58,28 @@ public class GrupoDTO {
 	
 	@NotEmpty
 	private byte[] pic;
+	
+	
+	private String base64Encoded;
+	
+	
+	
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getBase64Encoded() {
+		return base64Encoded;
+	}
+
+	public void setBase64Encoded(String base64Encoded) {
+		this.base64Encoded = base64Encoded;
+	}
 
 	public GrupoDTO(@NotBlank String nombreGrupo, @NotBlank String nombre, @NotBlank String provincia,
 			@NotNull int componentes, @NotBlank String telefono, String youtube, String email, String intagram, String facebook,
@@ -76,16 +104,9 @@ public class GrupoDTO {
 	}
 
 	public GrupoDTO() {
+		
 	}
 	
-
-	public Integer getEdicion() {
-		return edicion;
-	}
-
-	public void setEdicion(Integer edicion) {
-		this.edicion = edicion;
-	}
 
 	public String getEmail() {
 		return email;
@@ -205,6 +226,23 @@ public class GrupoDTO {
 
 	public void setPic(byte[] pic) {
 		this.pic = pic;
+	}
+	
+	public Integer getEdicion() {
+		return edicion;
+	}
+
+	public void setEdicion(Integer edicion) {
+		this.edicion = edicion;
+	}
+	
+	@Override
+	public String toString() {
+		return "Grupo [nombre=" + nombre + ", apellidos=" + nombreGrupo + ", provincia=" + provincia
+				+ ", componentes=" + componentes + ", telefono=" + telefono + ", youtube=" + youtube + ", intagram="
+				+ intagram + ", facebook=" + facebook + ", twitter=" + twitter + ", cancion1=" + cancion1
+				+ ", cancion2=" + cancion2 + ", cancion3=" + cancion3 + ", cancion4=" + cancion4 + ", edicion="
+				+ edicion + ", pic=" + Arrays.toString(pic) + "]";
 	}
 
 }

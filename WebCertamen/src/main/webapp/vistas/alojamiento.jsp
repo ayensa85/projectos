@@ -14,7 +14,6 @@
 
 <!-- Bootstrap core CSS -->
 <!-- Latest compiled and minified CSS -->
-<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="<c:url value="/css/certamen.css"/>">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"

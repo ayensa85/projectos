@@ -1,5 +1,6 @@
 package tajador.certamen.model;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 import javax.persistence.Column;
@@ -11,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Grupo {
+public class Grupo implements Serializable{
 
 	@Id
 	@GeneratedValue
@@ -47,9 +48,12 @@ public class Grupo {
 	private String cancion4;
 	@Column
 	private Integer edicion;
+	
 	@Lob
 	@Column(name = "foto")
 	private byte[] pic;
+	
+	private String base64Encoded;
 
 	public Grupo(Long id, String nombreGrupo, String nombre, String provincia, int componentes, String telefono,
 			String youtube, String intagram, String facebook, String twitter, String cancion1, String cancion2, String email, 
@@ -76,7 +80,14 @@ public class Grupo {
 	public Grupo() {
 	}
 	
-	
+
+	public String getBase64Encoded() {
+		return base64Encoded;
+	}
+
+	public void setBase64Encoded(String base64Encoded) {
+		this.base64Encoded = base64Encoded;
+	}
 
 	public String getEmail() {
 		return email;
@@ -92,14 +103,6 @@ public class Grupo {
 
 	public void setNombreGrupo(String nombreGrupo) {
 		this.nombreGrupo = nombreGrupo;
-	}
-
-	public byte[] getPic() {
-		return pic;
-	}
-
-	public void setPic(byte[] pic) {
-		this.pic = pic;
 	}
 
 	public Long getId() {
@@ -204,6 +207,14 @@ public class Grupo {
 
 	public void setCancion4(String cancion4) {
 		this.cancion4 = cancion4;
+	}
+	
+	public byte[] getPic() {
+		return pic;
+	}
+
+	public void setPic(byte[] pic) {
+		this.pic = pic;
 	}
 
 	public Integer getEdicion() {
