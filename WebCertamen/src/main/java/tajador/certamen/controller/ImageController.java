@@ -22,7 +22,6 @@ public class ImageController {
 	@Autowired
 	GrupoService grupoService;
 	
-	
 	@RequestMapping(value = "/imageDisplay", method = RequestMethod.GET)
 	public void showImage(@RequestParam("id") Long itemId, HttpServletResponse response, HttpServletRequest request)
 			throws ServletException, IOException {
@@ -30,7 +29,6 @@ public class ImageController {
 		GrupoDTO grupoDto = grupoService.getById(itemId);
 		response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
 		response.getOutputStream().write(grupoDto.getPic());
-		response.getOutputStream().flush();
 		response.getOutputStream().close();
 
 	}
