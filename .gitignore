@@ -19,3 +19,4 @@ WebCertamen/target/maven-status/maven-compiler-plugin/testCompile/default-testCo
 WebCertamen/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
 WebCertamen/target/surefire-reports/tajador.certamen.WebCertamenApplicationTests.txt
 WebCertamen/target/surefire-reports/TEST-tajador.certamen.WebCertamenApplicationTests.xml
+WebCertamen/target/classes/application.properties
