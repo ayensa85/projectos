@@ -1,6 +1,7 @@
 package tajador.certamen.model;
 
 import java.io.Serializable;
+import java.sql.Blob;
 import java.util.Arrays;
 
 import javax.persistence.Column;
@@ -231,7 +232,7 @@ public class Grupo implements Serializable{
 				+ ", componentes=" + componentes + ", telefono=" + telefono + ", youtube=" + youtube + ", intagram="
 				+ intagram + ", facebook=" + facebook + ", twitter=" + twitter + ", cancion1=" + cancion1
 				+ ", cancion2=" + cancion2 + ", cancion3=" + cancion3 + ", cancion4=" + cancion4 + ", edicion="
-				+ edicion + ", pic=" + Arrays.toString(pic) + "]";
+				+ edicion ;
 	}
 
 }

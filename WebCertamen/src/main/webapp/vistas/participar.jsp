@@ -56,7 +56,7 @@
 
 			<form:form modelAttribute="participante" method="POST"
 				action="${pageContext.request.contextPath}/certamen/bases/participar/guardarParticipante"
-				class="form-horizontal">
+				class="form-horizontal" enctype="multipart/form-data">
 				<div class="col-lg-12 col-md-offset-2">
 					<div class="form-group">
 						<label for="nombreGrupo" class="control-label col-xs-2">Nombre
@@ -64,16 +64,16 @@
 						<div class="col-xs-6">
 							<form:input path="nombreGrupo" class="form-control"
 								placeholder="Nombre Grupo" />
-									<form:errors path="nombreGrupo" cssStyle="color:red" />
+							<form:errors path="nombreGrupo" cssStyle="color:red" />
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="nombre" class="control-label col-xs-2">Nombre
 							contacto:</label>
 						<div class="col-xs-6">
-							<form:input path="nombre" class="form-control" 
+							<form:input path="nombre" class="form-control"
 								placeholder="nombre contacto" />
-								<form:errors path="nombre" cssStyle="color:red"/>
+							<form:errors path="nombre" cssStyle="color:red" />
 						</div>
 					</div>
 					<div class="form-group">
@@ -137,13 +137,13 @@
 							</form:select>
 						</div>
 					</div>
-					<form:hidden path="edicion"/>
+					<form:hidden path="edicion" />
 					<div class="form-group">
 						<label for="componentes" class="control-label col-xs-2">Numero
 							de componentes</label>
 						<div class="col-xs-6">
 							<form:select path="componentes" class="form-control"
-								 placeholder="provincia">
+								placeholder="provincia">
 								<option value='1'>1</option>
 								<option value='2'>2</option>
 								<option value='3'>3</option>
@@ -165,16 +165,15 @@
 						<div class="col-xs-6">
 							<form:input path="telefono" class="form-control"
 								placeholder="telefono" />
-								<form:errors path="telefono" cssStyle="color:red"/>
+							<form:errors path="telefono" cssStyle="color:red" />
 						</div>
 					</div>
-				
+
 					<div class="form-group">
 						<label for="telefono" class="control-label col-xs-2">email:</label>
 						<div class="col-xs-6">
-							<form:input path="email" class="form-control"
-								placeholder="email" />
-								<form:errors path="email" cssStyle="color:red"/>
+							<form:input path="email" class="form-control" placeholder="email" />
+							<form:errors path="email" cssStyle="color:red" />
 						</div>
 					</div>
 					<div class="form-group">
@@ -215,7 +214,7 @@
 						<div class="col-xs-6">
 							<form:input path="cancion1" class="form-control"
 								placeholder="cancion1" />
-								<form:errors path="cancion1" cssStyle="color:red"/>
+							<form:errors path="cancion1" cssStyle="color:red" />
 						</div>
 					</div>
 					<div class="form-group">
@@ -224,7 +223,7 @@
 						<div class="col-xs-6">
 							<form:input path="cancion2" class="form-control"
 								placeholder="cancion2" />
-								<form:errors path="cancion2" cssStyle="color:red"/>
+							<form:errors path="cancion2" cssStyle="color:red" />
 						</div>
 					</div>
 					<div class="form-group col-md-offset-2">
@@ -233,7 +232,7 @@
 						<div class="col-xs-6">
 							<form:input path="cancion3" class="form-control"
 								placeholder="cancion3" />
-								<form:errors path="cancion3" cssStyle="color:red"/>
+							<form:errors path="cancion3" cssStyle="color:red" />
 						</div>
 					</div>
 					<div class="form-group">
@@ -242,40 +241,41 @@
 						<div class="col-xs-6">
 							<form:input path="cancion4" class="form-control"
 								placeholder="cancion4" />
-								<form:errors path="cancion4" cssStyle="color:red"/>
+							<form:errors path="cancion4" cssStyle="color:red" />
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="pic" class="control-label col-xs-2">Foto</label>
 						<div class="col-xs-3">
-							<form:input path="pic" class="form-control" type="file"
-								placeholder="pic" />
-							<form:errors path="pic" cssStyle="color:red"/> 	
+							<input class="form-control" type="file" placeholder="pic"
+								name="foto" />
+							<%-- 							<form:errors path="pic" cssStyle="color:red"/> 	 --%>
+							<form:hidden path="pic" class="form-control" type="file"
+								placeholder="pic" name="foto" />
 						</div>
 					</div>
-
-
 				</div>
-				<c:choose>
-					<c:when test="${empty grupoInscrito}">
-						<div class="row marketing separador"></div>
-
-					</c:when>
-					<c:when test="${grupoInscrito.correcto eq 1}">
-						<div class="row marketing separador">
-
-							<div class="alert alert-success" role="alert">Grupo
-								Inscrito con éxito</div>
-						</div>
-					</c:when>
-				</c:choose>
-				<div class="row marketing separador">
-					<input class="btn btn-primary btn-lg" type="submit"
-						value="Inscribirse" />
-				</div>
-			</form:form>
-
 		</div>
+		<c:choose>
+			<c:when test="${empty grupoInscrito}">
+				<div class="row marketing separador"></div>
+
+			</c:when>
+			<c:when test="${grupoInscrito.correcto eq 1}">
+				<div class="row marketing separador">
+
+					<div class="alert alert-success" role="alert">Grupo Inscrito
+						con éxito</div>
+				</div>
+			</c:when>
+		</c:choose>
+		<div class="row marketing separador">
+			<input class="btn btn-primary btn-lg" type="submit"
+				value="Inscribirse" />
+		</div>
+		</form:form>
+
+	</div>
 	</div>
 	<%@include file="common/footer.jsp"%>
 </body>

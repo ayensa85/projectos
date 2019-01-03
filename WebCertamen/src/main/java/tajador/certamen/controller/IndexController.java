@@ -16,6 +16,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import tajador.certamen.dto.GrupoDTO;
@@ -158,15 +160,16 @@ public class IndexController {
 	}
 
 	@RequestMapping(value = "/bases/participar/guardarParticipante", method = RequestMethod.POST)
-	public String goToAniadirParticipante(@ModelAttribute("participante") @Valid GrupoDTO participante, BindingResult result,  Model model,
+	public String goToAniadirParticipante(@RequestParam("foto") MultipartFile file, @ModelAttribute("participante") @Valid GrupoDTO participante, BindingResult result,  Model model,
 			RedirectAttributes ra) throws Exception{
 		 if (result.hasErrors()) {
 			return "participar";
 		} 
 		 else {
 			try {
+				
 				participante.setEdicion(Integer.parseInt(edicion));
-				IntegerWrapper correcto = new IntegerWrapper(Integer.valueOf(grupoService.guardarGrupo(participante)));
+				IntegerWrapper correcto = new IntegerWrapper(Integer.valueOf(grupoService.guardarGrupo(participante, file)));
 				ra.addFlashAttribute("participanteAniadido", correcto);
 			} catch (Exception e) {
 				System.out.println(e);

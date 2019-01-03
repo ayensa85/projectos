@@ -28,7 +28,7 @@ public class ImageController {
 
 		GrupoDTO grupoDto = grupoService.getById(itemId);
 		response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
-		response.getOutputStream().write(grupoDto.getPic());
+//		response.getOutputStream().write(grupoDto.getPic());
 		response.getOutputStream().close();
 
 	}

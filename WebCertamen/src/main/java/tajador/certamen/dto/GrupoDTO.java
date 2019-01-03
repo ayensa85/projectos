@@ -2,6 +2,7 @@ package tajador.certamen.dto;
 
 
 
+import java.sql.Blob;
 import java.util.Arrays;
 
 import javax.validation.constraints.NotNull;
@@ -56,7 +57,6 @@ public class GrupoDTO {
 	
 	private Integer edicion;
 	
-	@NotEmpty
 	private byte[] pic;
 	
 	
@@ -224,8 +224,8 @@ public class GrupoDTO {
 		return pic;
 	}
 
-	public void setPic(byte[] pic) {
-		this.pic = pic;
+	public void setPic(byte[] bs) {
+		this.pic = bs;
 	}
 	
 	public Integer getEdicion() {
@@ -242,7 +242,7 @@ public class GrupoDTO {
 				+ ", componentes=" + componentes + ", telefono=" + telefono + ", youtube=" + youtube + ", intagram="
 				+ intagram + ", facebook=" + facebook + ", twitter=" + twitter + ", cancion1=" + cancion1
 				+ ", cancion2=" + cancion2 + ", cancion3=" + cancion3 + ", cancion4=" + cancion4 + ", edicion="
-				+ edicion + ", pic=" + Arrays.toString(pic) + "]";
+				+ edicion + ", pic=" ;
 	}
 
 }

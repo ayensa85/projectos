@@ -10,6 +10,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.UnexpectedRollbackException;
+import org.springframework.web.multipart.MultipartFile;
 
 import tajador.certamen.dao.GrupoDAO;
 import tajador.certamen.dto.GrupoDTO;
@@ -23,10 +24,11 @@ public class GrupoService {
 	@Autowired
 	GrupoDAO grupoDao;
 
-	public int guardarGrupo(GrupoDTO grupo) {
+	public int guardarGrupo(GrupoDTO grupo, MultipartFile file) {
 		try {
 			Grupo participante = new Grupo();
 			BeanUtils.copyProperties(grupo, participante);
+			participante.setPic(file.getBytes());
 			grupoDao.saveAndFlush(participante);
 		} catch (UnexpectedRollbackException ex) {
 			if (ex.getMostSpecificCause() instanceof SQLIntegrityConstraintViolationException) {
@@ -48,7 +50,7 @@ public class GrupoService {
 		try {
 			Optional<Grupo> aBuscar = grupoDao.findById(grupoDto);	
 			BeanUtils.copyProperties(aBuscar.get(), aDevolver);
-			aDevolver.setPic(aBuscar.get().getPic());
+//			aDevolver.setPic(aBuscar.get().getPic());
 			return aDevolver;
 		
 		} catch (UnexpectedRollbackException ex) {
