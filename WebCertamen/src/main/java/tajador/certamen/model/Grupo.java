@@ -60,7 +60,7 @@ public class Grupo implements Serializable{
 
 	public Grupo(Long id, String nombreGrupo, String nombre, String provincia, int componentes, String telefono,
 			String youtube, String intagram, String facebook, String twitter, String cancion1, String cancion2, String email, 
-			String cancion3, String cancion4, Integer edicion, byte[] pic) {
+			String cancion3, String cancion4, Integer edicion, byte[] pic, Integer numVotos) {
 		this.id = id;
 		this.nombreGrupo = nombreGrupo;
 		this.nombre = nombre;
@@ -77,12 +77,20 @@ public class Grupo implements Serializable{
 		this.cancion3 = cancion3;
 		this.cancion4 = cancion4;
 		this.edicion = edicion;
-		this.pic = pic;
+		this.pic = pic; 
+		this.numVotos = numVotos; 
 	}
 
 	public Grupo() {
 	}
-	
+
+	public Integer getNumVotos() {
+		return numVotos;
+	}
+
+	public void setNumVotos(Integer numVotos) {
+		this.numVotos = numVotos;
+	}
 
 	public String getEmail() {
 		return email;

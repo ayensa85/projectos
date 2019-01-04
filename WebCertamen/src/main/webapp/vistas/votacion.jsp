@@ -35,24 +35,22 @@
 		crossorigin="anonymous"></script>
 
 	<%@include file="common/menu.jsp"%>
-	
+
 	<div class="container separador marketing">
-	<c:forEach items="${participantes}" var="participante">
-		<div class="row separador">
-			<div class="col-lg-6">
-				<img src="${pageContext.request.contextPath}/myImage/imageDisplay?id=${participante.id}"/>
-			</div>
-			<div class="col-lg-6">
-				<p>aaaaaaaaaaaaaaaaaaa</p>
+		<c:forEach items="${participantes}" var="participante">
+			<div class="row separador">
 
+				<div class="media">
+					<div class="media-left">
+						<img  class="media-object" src="${pageContext.request.contextPath}/myImage/imageDisplay?id=${participante.id}" />
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading"><c:out value="${participante.nombreGrupo }"/></h4>
+					</div>
+				</div>
 			</div>
-		</div>
-	</c:forEach>
+		</c:forEach>
 	</div>
-
-
-
-
 	<%@include file="common/footer.jsp"%>
 
 
