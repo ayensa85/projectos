@@ -50,11 +50,13 @@ public class Grupo implements Serializable{
 	@Column
 	private Integer edicion;
 	
+	@Column
+	private Integer numVotos;
+	
 	@Lob
 	@Column(name = "foto")
 	private byte[] pic;
 	
-	private String base64Encoded;
 
 	public Grupo(Long id, String nombreGrupo, String nombre, String provincia, int componentes, String telefono,
 			String youtube, String intagram, String facebook, String twitter, String cancion1, String cancion2, String email, 
@@ -81,14 +83,6 @@ public class Grupo implements Serializable{
 	public Grupo() {
 	}
 	
-
-	public String getBase64Encoded() {
-		return base64Encoded;
-	}
-
-	public void setBase64Encoded(String base64Encoded) {
-		this.base64Encoded = base64Encoded;
-	}
 
 	public String getEmail() {
 		return email;

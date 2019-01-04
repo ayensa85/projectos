@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import tajador.certamen.dto.GrupoDTO;
+import tajador.certamen.model.Grupo;
 import tajador.certamen.service.GrupoService;
 
 @Controller
@@ -26,11 +26,10 @@ public class ImageController {
 	public void showImage(@RequestParam("id") Long itemId, HttpServletResponse response, HttpServletRequest request)
 			throws ServletException, IOException {
 
-		GrupoDTO grupoDto = grupoService.getById(itemId);
+		Grupo grupo = grupoService.getById(itemId);
 		response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
-//		response.getOutputStream().write(grupoDto.getPic());
+		response.getOutputStream().write(grupo.getPic());
 		response.getOutputStream().close();
-
 	}
 
 }

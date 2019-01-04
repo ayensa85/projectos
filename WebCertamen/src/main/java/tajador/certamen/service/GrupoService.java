@@ -44,27 +44,24 @@ public class GrupoService {
 		}
 		return 1;
 	}
-	public GrupoDTO getById(Long grupoDto) {
+	public Grupo getById(Long grupoDto) {
 		
-		GrupoDTO aDevolver = new GrupoDTO();
 		try {
 			Optional<Grupo> aBuscar = grupoDao.findById(grupoDto);	
-			BeanUtils.copyProperties(aBuscar.get(), aDevolver);
-//			aDevolver.setPic(aBuscar.get().getPic());
-			return aDevolver;
+			return aBuscar.get();
 		
 		} catch (UnexpectedRollbackException ex) {
 			if (ex.getMostSpecificCause() instanceof SQLIntegrityConstraintViolationException) {
 				logger.error("Error al insertar en base de datos");
 				logger.error("SQLIntegrityConstraintViolationException");
 				logger.error(ex.toString());
-				return new GrupoDTO();
+				return new Grupo();
 			}
-			return aDevolver;
+			return new Grupo();
 		} catch (Exception ex) {
 			logger.error("Error al insertar en base de datos");
 			logger.error(ex.toString());
-			return new GrupoDTO();
+			return new Grupo();
 		}
 		
 	}

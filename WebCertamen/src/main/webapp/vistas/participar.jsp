@@ -247,11 +247,8 @@
 					<div class="form-group">
 						<label for="pic" class="control-label col-xs-2">Foto</label>
 						<div class="col-xs-3">
-							<input class="form-control" type="file" placeholder="pic"
+							<input class="form-control" type="file" placeholder="foto"
 								name="foto" />
-							<%-- 							<form:errors path="pic" cssStyle="color:red"/> 	 --%>
-							<form:hidden path="pic" class="form-control" type="file"
-								placeholder="pic" name="foto" />
 						</div>
 					</div>
 				</div>

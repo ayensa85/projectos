@@ -57,7 +57,7 @@ public class GrupoDTO {
 	
 	private Integer edicion;
 	
-	private byte[] pic;
+	
 	
 	
 	private String base64Encoded;
@@ -84,7 +84,7 @@ public class GrupoDTO {
 	public GrupoDTO(@NotBlank String nombreGrupo, @NotBlank String nombre, @NotBlank String provincia,
 			@NotNull int componentes, @NotBlank String telefono, String youtube, String email, String intagram, String facebook,
 			String twitter, @NotBlank String cancion1, @NotBlank String cancion2, @NotBlank String cancion3, Integer edicion, 
-			@NotBlank String cancion4, @NotNull byte[] pic) {
+			@NotBlank String cancion4) {
 		this.nombreGrupo = nombreGrupo;
 		this.nombre = nombre;
 		this.provincia = provincia;
@@ -100,7 +100,7 @@ public class GrupoDTO {
 		this.cancion3 = cancion3;
 		this.cancion4 = cancion4;
 		this.edicion = edicion;
-		this.pic = pic;
+		
 	}
 
 	public GrupoDTO() {
@@ -218,14 +218,6 @@ public class GrupoDTO {
 
 	public void setCancion4(String cancion4) {
 		this.cancion4 = cancion4;
-	}
-
-	public byte[] getPic() {
-		return pic;
-	}
-
-	public void setPic(byte[] bs) {
-		this.pic = bs;
 	}
 	
 	public Integer getEdicion() {
