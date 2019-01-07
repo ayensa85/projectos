@@ -39,13 +39,13 @@ public class Grupo implements Serializable{
 	private String facebook;
 	@Column
 	private String twitter;
-	@Column
+	@Column(length=350)
 	private String cancion1;
-	@Column
+	@Column(length=350)
 	private String cancion2;
-	@Column
+	@Column(length=350)
 	private String cancion3;
-	@Column
+	@Column(length=350)
 	private String cancion4;
 	@Column
 	private Integer edicion;

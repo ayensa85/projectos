@@ -2,16 +2,13 @@ package tajador.certamen.dto;
 
 
 
-import java.sql.Blob;
-import java.util.Arrays;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.hibernate.validator.constraints.URL;
 
 public class GrupoDTO {
 	
@@ -42,18 +39,22 @@ public class GrupoDTO {
 	private String facebook;
 
 	private String twitter;
+	
 	@NotEmpty
-	@URL
+	@Size(min = 250, max =350)
 	private String cancion1;
 	@NotEmpty
-	@URL
+	@Size(min = 250, max =350)
 	private String cancion2;
+	
 	@NotEmpty
-	@URL
+	@Size(min = 250, max =350)
 	private String cancion3;
+	
 	@NotEmpty
-	@URL
+	@Size(min = 250, max =350)
 	private String cancion4;
+	
 	
 	private Integer edicion;
 	

@@ -37,17 +37,40 @@
 	<%@include file="common/menu.jsp"%>
 
 	<div class="container separador marketing">
+		<div class="row separador">
+			<h1>VOTA TU GRUPO FAVORITO</h1>
+		
+		
+		</div>
 		<c:forEach items="${participantes}" var="participante">
 			<div class="row separador">
-
-				<div class="media">
-					<div class="media-left">
-						<img  class="media-object" src="${pageContext.request.contextPath}/myImage/imageDisplay?id=${participante.id}" />
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading"><c:out value="${participante.nombreGrupo }"/></h4>
+				<h3><c:out value="${participante.nombreGrupo}"/></h3>
+				<div class="col-lg-3 separador">
+					<div class="thumbnail">
+						<img class="media-object mx-auto"
+							src="${pageContext.request.contextPath}/myImage/imageDisplay?id=${participante.id}" />
+							
+<!-- 						<div class="caption"> -->
+							
+<!-- 						</div> -->
 					</div>
 				</div>
+				<div class="col-lg-9 separador">
+					<p>
+								${participante.cancion1}
+							</p>
+							<p>
+								${participante.cancion2}
+							</p>
+							<p>
+								${participante.cancion3}
+							</p>
+							<p>
+								${participante.cancion4}
+							</p>							
+				</div>	
+								<a href="#" class="btn btn-primary separador" role="button">Votar <c:out value="${participante.nombreGrupo}"/></a> 
+				
 			</div>
 		</c:forEach>
 	</div>
