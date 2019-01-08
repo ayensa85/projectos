@@ -198,7 +198,7 @@ public class IndexController {
 		
 	}
 	@RequestMapping(value = "/votar/{id}")
-	public void votarGrupo(@PathVariable long id, Model model, HttpServletRequest request) {
+	public void votarGrupo(@PathVariable long id, Model model, HttpServletRequest request, RedirectAttributes ra) {
 		
 		if("".equals(lastIp) || lastIp.equals(request.getRemoteAddr())) {
 			
