@@ -61,7 +61,7 @@ public class GrupoDTO {
 	
 	
 	
-	private String base64Encoded;
+	private Integer numVotos;
 	
 	
 	
@@ -72,14 +72,6 @@ public class GrupoDTO {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getBase64Encoded() {
-		return base64Encoded;
-	}
-
-	public void setBase64Encoded(String base64Encoded) {
-		this.base64Encoded = base64Encoded;
 	}
 
 	public GrupoDTO(@NotBlank String nombreGrupo, @NotBlank String nombre, @NotBlank String provincia,

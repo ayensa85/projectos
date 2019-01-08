@@ -3,6 +3,7 @@ package tajador.certamen.controller;
 import java.io.InputStream;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
@@ -14,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,6 +33,11 @@ public class IndexController {
 	
 
 	private static Logger logger = Logger.getLogger(IndexController.class);
+	
+	
+	private String lastIp="";
+	
+	
 	
 	@Value("${certamen.edicion}")
 	String edicion;
@@ -188,6 +195,21 @@ public class IndexController {
 		List<GrupoDTO> grupos= grupoService.getGruposByEdicion(22);
 		model.addAttribute("participantes", grupos);
 		return "votacion";
+		
+	}
+	@RequestMapping(value = "/votar/{id}")
+	public void votarGrupo(@PathVariable long id, Model model, HttpServletRequest request) {
+		
+		if("".equals(lastIp) || lastIp.equals(request.getRemoteAddr())) {
+			
+			
+			
+		}
+		
+		
+//		List<GrupoDTO> grupos= grupoService.getGruposByEdicion(22);
+//		model.addAttribute("participantes", grupos);
+		System.out.println("Hemos entrado");
 		
 	}
 

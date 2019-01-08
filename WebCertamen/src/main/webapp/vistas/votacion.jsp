@@ -69,13 +69,11 @@
 								${participante.cancion4}
 							</p>							
 				</div>	
-								<a href="#" class="btn btn-primary separador" role="button">Votar <c:out value="${participante.nombreGrupo}"/></a> 
+								<a href="${pageContext.request.contextPath}/certamen/votar/${participante.id}" class="btn btn-primary separador" role="button">Votar <c:out value="${participante.nombreGrupo}"/></a> 
 				
 			</div>
 		</c:forEach>
 	</div>
 	<%@include file="common/footer.jsp"%>
-
-
 </body>
 </html>
