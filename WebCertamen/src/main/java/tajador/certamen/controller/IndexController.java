@@ -10,6 +10,8 @@ import javax.validation.Valid;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -41,6 +43,9 @@ public class IndexController {
 	
 	@Value("${certamen.edicion}")
 	String edicion;
+	
+	@Value("${certamen.numVotos.inicial}")
+	String numVotosInicial;
 
 	@Autowired
 	GrupoService grupoService;
@@ -176,6 +181,7 @@ public class IndexController {
 			try {
 				
 				participante.setEdicion(Integer.parseInt(edicion));
+				participante.setNumVotos(Integer.parseInt(numVotosInicial));
 				IntegerWrapper correcto = new IntegerWrapper(Integer.valueOf(grupoService.guardarGrupo(participante, file)));
 				ra.addFlashAttribute("participanteAniadido", correcto);
 			} catch (Exception e) {
@@ -197,24 +203,24 @@ public class IndexController {
 		return "votacion";
 		
 	}
+	
+	
 	@RequestMapping(value = "/votar/{id}")
-	public void votarGrupo(@PathVariable long id, Model model, HttpServletRequest request, RedirectAttributes ra) {
+	public ResponseEntity<String> votarGrupo(@PathVariable long id, Model model, HttpServletRequest request) {
 		
 		if("".equals(lastIp) || lastIp.equals(request.getRemoteAddr())) {
 			
+			grupoService.updateVotoById(id);
+			return new ResponseEntity<String>(HttpStatus.OK);
 			
+		}else {
 			
-		}
-		
-		
-//		List<GrupoDTO> grupos= grupoService.getGruposByEdicion(22);
-//		model.addAttribute("participantes", grupos);
-		System.out.println("Hemos entrado");
+			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+			
+ 		}
 		
 	}
-
 	
-
 	@RequestMapping("/acceso")
 	public String goToAcceso() {
 		return "login";

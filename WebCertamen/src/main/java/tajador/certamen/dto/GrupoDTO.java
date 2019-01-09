@@ -77,7 +77,7 @@ public class GrupoDTO {
 	public GrupoDTO(@NotBlank String nombreGrupo, @NotBlank String nombre, @NotBlank String provincia,
 			@NotNull int componentes, @NotBlank String telefono, String youtube, String email, String intagram, String facebook,
 			String twitter, @NotBlank String cancion1, @NotBlank String cancion2, @NotBlank String cancion3, Integer edicion, 
-			@NotBlank String cancion4) {
+			@NotBlank String cancion4, Integer numVotos) {
 		this.nombreGrupo = nombreGrupo;
 		this.nombre = nombre;
 		this.provincia = provincia;
@@ -93,6 +93,7 @@ public class GrupoDTO {
 		this.cancion3 = cancion3;
 		this.cancion4 = cancion4;
 		this.edicion = edicion;
+		this.numVotos = numVotos;
 		
 	}
 
@@ -100,6 +101,14 @@ public class GrupoDTO {
 		
 	}
 	
+
+	public Integer getNumVotos() {
+		return numVotos;
+	}
+
+	public void setNumVotos(Integer numVotos) {
+		this.numVotos = numVotos;
+	}
 
 	public String getEmail() {
 		return email;

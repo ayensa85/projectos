@@ -30,6 +30,7 @@ public class GrupoService {
 			BeanUtils.copyProperties(grupo, participante);
 			participante.setPic(file.getBytes());
 			grupoDao.saveAndFlush(participante);
+			return 1;
 		} catch (UnexpectedRollbackException ex) {
 			if (ex.getMostSpecificCause() instanceof SQLIntegrityConstraintViolationException) {
 				logger.error("Error al insertar en base de datos");
@@ -42,8 +43,9 @@ public class GrupoService {
 			logger.error(ex.toString());
 			return 0;
 		}
-		return 1;
 	}
+	
+	
 	public Grupo getById(Long grupoDto) {
 		
 		try {
@@ -65,7 +67,22 @@ public class GrupoService {
 		}
 		
 	}
-
+	
+	public int updateVotoById(Long id) {
+		try {
+			grupoDao.udateVotoById(id);
+			grupoDao.flush();
+			
+			return 1;
+		}catch(Exception e) {
+			logger.error("Error al insertar en base de datos");
+			logger.error(e.toString());
+			System.out.println(e.toString());
+			
+			return 0;
+		}
+	}
+	
 	public List<GrupoDTO> getGruposByEdicion(Integer edicion) {
 		try {
 			List<Grupo> participantes = grupoDao.findGrupoByEdicion(edicion);
@@ -90,5 +107,7 @@ public class GrupoService {
 		}
 
 	}
+	
+	
 
 }

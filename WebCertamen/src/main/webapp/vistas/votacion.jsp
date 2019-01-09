@@ -28,49 +28,68 @@
 	<!-- PArte que mueve los componentes javasript de boostrap -->
 
 	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+	</script>
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 		crossorigin="anonymous"></script>
+		
+		<script>
+		function votoAJAX(id){
+			$.ajax({
+		        url: "${pageContext.request.contextPath}/certamen/votar/" + id,
+		        success: function(){
+		                //your code here
+		                
+		                alert("Voto añadido con éxito");
+		        },
+		        error: function(){
+		                //your code here
+		                
+		        	 alert("Esta ip ya ha introducido su voto permitido");
+		        }
+			});
+			
+			
+		}
+		</script>
+
+	
+
+
 
 	<%@include file="common/menu.jsp"%>
 
 	<div class="container separador marketing">
 		<div class="row separador">
 			<h1>VOTA TU GRUPO FAVORITO</h1>
-		
-		
+
+
 		</div>
 		<c:forEach items="${participantes}" var="participante">
 			<div class="row separador">
-				<h3><c:out value="${participante.nombreGrupo}"/></h3>
+				<h3>
+					<c:out value="${participante.nombreGrupo}" />
+				</h3>
 				<div class="col-lg-3 separador">
 					<div class="thumbnail">
 						<img class="media-object mx-auto"
 							src="${pageContext.request.contextPath}/myImage/imageDisplay?id=${participante.id}" />
-							
-<!-- 						<div class="caption"> -->
-							
-<!-- 						</div> -->
+
 					</div>
 				</div>
 				<div class="col-lg-9 separador">
-					<p>
-								${participante.cancion1}
-							</p>
-							<p>
-								${participante.cancion2}
-							</p>
-							<p>
-								${participante.cancion3}
-							</p>
-							<p>
-								${participante.cancion4}
-							</p>							
-				</div>	
-								<a href="${pageContext.request.contextPath}/certamen/votar/${participante.id}" class="btn btn-primary separador" role="button">Votar <c:out value="${participante.nombreGrupo}"/></a> 
-				
+					<p>${participante.cancion1}</p>
+					<p>${participante.cancion2}</p>
+					<p>${participante.cancion3}</p>
+					<p>${participante.cancion4}</p>
+				</div>
+				 <button type="button" class="btn btn-primary separador" onclick="votoAJAX(${participante.id})">Votar <c:out
+						value="${participante.nombreGrupo}" />
+                             </button>
+
 			</div>
 		</c:forEach>
 	</div>
