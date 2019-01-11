@@ -42,6 +42,8 @@
 	<script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.1/jquery.lazy.min.js"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazy/1.7.1/plugins/jquery.lazy.youtube.min.js"></script>
+		
+		<script>
 		$(document).ready(function() {
 			$("#carrousel").hide();
 			$("#tituloCarousel").hide();
@@ -65,11 +67,9 @@
 	<%@include file="common/menu.jsp"%>
 
 
-	<div class="row marketing"></div>
-
-	<div class="container">
+	<div class="container-fluid">
 		<!-- 		<hr class="featurette divider" /> -->
-		<div class="jumbotron marketing separador">
+		<div class="row jumbotron marketing">
 			<h1>
 				<spring:message code="certamen.festival.titulo" />
 			</h1>
@@ -107,11 +107,9 @@
 							<div class="item active">
 								<a href="/certamen/horarios"><img
 									class="first-slide img-responsive"
-									src="<c:url value="/images/festival.jpg"/>" " alt="First slide"></a>
+									src="<c:url value="/images/festival.jpg"/>"  alt="First slide"></a>
 								<div class="container">
-									<div class="carousel-caption">
-										<h1>Sidonie</h1>
-									</div>
+									<div class="carousel-caption"></div>
 								</div>
 							</div>
 							<div class="item">

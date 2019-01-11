@@ -46,7 +46,7 @@
 								<li><a href="${pageContext.request.contextPath}/certamen/grupo10"><spring:message code="menu.certamen.grupo10"/></a></li>
 							</ul></li>
 							<li><a href="${pageContext.request.contextPath}/certamen/votatugrupo"><spring:message code="menu.presentados"/></a></li>
-					<li><a href="#"><spring:message code="menu.horarios"/></a></li>
+					<li><a href="${pageContext.request.contextPath}/certamen/horarios"><spring:message code="menu.horarios"/></a></li>
 					<li><a href="#"><spring:message code="menu.prensa"/></a></li>
 					
 						

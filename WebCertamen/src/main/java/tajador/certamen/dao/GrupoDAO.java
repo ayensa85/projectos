@@ -3,6 +3,7 @@ package tajador.certamen.dao;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -17,8 +18,9 @@ public interface GrupoDAO extends JpaRepository<Grupo, Long> {
     List<Grupo> findGrupoByEdicion(@Param("edicion") Integer edicion);
 	
 	@Transactional
+	@Modifying
 	@Query(value="UPDATE Grupo SET numvotos = numvotos + 1 where id=:id", nativeQuery=true)
-	void udateVotoById(@Param("id") long id);
+	int udateVotoById(@Param("id") long id);
 	
 	
 	@Query(value="SELECT g FROM Grupo g where g.edicion = :edicion")

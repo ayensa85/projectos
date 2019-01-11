@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -207,23 +208,30 @@ public class IndexController {
 	
 	@RequestMapping(value = "/votar/{id}")
 	public ResponseEntity<String> votarGrupo(@PathVariable long id, Model model, HttpServletRequest request) {
+		try {
+			if("".equals(lastIp) || !lastIp.equals(request.getRemoteAddr())) {
+				
+				grupoService.updateVotoById(id);
+				lastIp = request.getRemoteAddr();
+				return new ResponseEntity<String>(HttpStatus.OK);
+				
+			}else {
+				
+				return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+				
+	 		}
+		}catch(JpaSystemException e) {
+			return new ResponseEntity<String>(HttpStatus.EXPECTATION_FAILED);
+			
+		}
 		
-		if("".equals(lastIp) || lastIp.equals(request.getRemoteAddr())) {
-			
-			grupoService.updateVotoById(id);
-			return new ResponseEntity<String>(HttpStatus.OK);
-			
-		}else {
-			
-			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
-			
- 		}
+		
 		
 	}
 	
-	@RequestMapping("/acceso")
+	@RequestMapping("/horarios")
 	public String goToAcceso() {
-		return "login";
+		return "horarios";
 	}
 
 }

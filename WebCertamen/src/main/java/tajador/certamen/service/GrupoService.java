@@ -70,16 +70,16 @@ public class GrupoService {
 	
 	public int updateVotoById(Long id) {
 		try {
-			grupoDao.udateVotoById(id);
+			int i = grupoDao.udateVotoById(id);
 			grupoDao.flush();
 			
-			return 1;
+			return i;
 		}catch(Exception e) {
 			logger.error("Error al insertar en base de datos");
 			logger.error(e.toString());
 			System.out.println(e.toString());
 			
-			return 0;
+			throw e;
 		}
 	}
 	

@@ -15,8 +15,7 @@
 <!-- Bootstrap core CSS -->
 <!-- Latest compiled and minified CSS -->
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="<c:url value="/css/certamen.css"/>">
+<link rel="stylesheet" href="<c:url value="/css/certamen.css"/>">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -57,6 +56,8 @@
 
 	<%@include file="common/menu.jsp"%>
 
+	
+	<div class="container-fluid">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -64,7 +65,7 @@
 			<li data-target="#myCarousel" data-slide-to="1" class=""></li>
 			<li data-target="#myCarousel" data-slide-to="2" class=""></li>
 			<li data-target="#myCarousel" data-slide-to="3" class=""></li>
-			
+
 		</ol>
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
@@ -103,8 +104,10 @@
 				</div>
 			</div>
 			<div class="item">
-				<a href="${pageContext.request.contextPath}/certamen/bases"><img class="third-slide img-responsive"
-					src="<c:url value="/images/mandatumaqueta.jpg"/>" alt="Second slide"></a>
+				<a href="${pageContext.request.contextPath}/certamen/bases"><img
+					class="third-slide img-responsive"
+					src="<c:url value="/images/mandatumaqueta.jpg"/>"
+					alt="Second slide"></a>
 				<div class="container">
 					<div class="carousel-caption">
 						<h1>
@@ -113,7 +116,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 		<a class="left carousel-control" href="#myCarousel" role="button"
 			data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
@@ -124,10 +127,8 @@
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
-
-	<div class="container">
-		<hr class="featurette divider" />
-		<div class="jumbotron marketing">
+	
+		<div class="row jumbotron marketing">
 			<h1>
 				<spring:message code="noticias.titulo" />
 			</h1>
@@ -255,9 +256,10 @@
 			<div id="loadMore" style="">
 				<p>
 
-<!-- 					<a class="btn btn-primary btn-lg" href="#" role="button" -->
-<%-- 						id="cargarNoticias"><spring:message code="cargar.mas" /></a> --%>
-						<input type="button" class="btn btn-primary btn-lg" id="cargarNoticias" value="<spring:message code="cargar.mas"/>"/>
+					<!-- 					<a class="btn btn-primary btn-lg" href="#" role="button" -->
+					<%-- 						id="cargarNoticias"><spring:message code="cargar.mas" /></a> --%>
+					<input type="button" class="btn btn-primary btn-lg"
+						id="cargarNoticias" value="<spring:message code="cargar.mas"/>" />
 				</p>
 			</div>
 
@@ -269,7 +271,7 @@
 	</div>
 
 	<%@include file="common/footer.jsp"%>
-	
+
 
 
 

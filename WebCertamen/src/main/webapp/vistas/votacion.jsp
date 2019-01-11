@@ -50,9 +50,8 @@
 		                
 		        	 alert("Esta ip ya ha introducido su voto permitido");
 		        }
+		        
 			});
-			
-			
 		}
 		</script>
 
