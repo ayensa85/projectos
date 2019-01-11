@@ -90,7 +90,7 @@
 						<div class="media">
 							<div class="media-left media-top">
 								<a href="#"> <img class="media-object"
-									src="<c:url value="/images/family-group(1).png"/>"
+									src="<c:url value="/images/saxophone.png"/>"
 									alt="logo familia">
 								</a>
 							</div>
@@ -104,34 +104,86 @@
 								13:15h Bar Lord Jim
 							</div>
 						</div>
-						<div class="media">
-							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
-									src="<c:url value="/images/musica64.png"/>" alt="logo música">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading">Middle aligned media</h4>
-								...
-							</div>
-						</div>
 					</div>
-				</div>
-
-				<div class="col-lg-4 separador">
+					
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<h3 class="panel-title">D&iacute;a 2</h3>
 						</div>
 						<div class="media">
-							<div class="media-left media-middle">
+							<div class="media-left media-top">
 								<a href="#"> <img class="media-object"
-									src="<c:url value="/images/musica64.png"/>" alt="logo música">
+									src="<c:url value="/images/family-group(1).png"/>"
+									alt="logo familia">
 								</a>
 							</div>
 							<div class="media-body">
-								<h4 class="media-heading">Middle aligned media</h4>
-								...
+								<h4 class="media-heading">
+									<strong>LA NORIA</strong>
+								</h4>
+								<h5>
+									<strong>Viaje a la luna</strong>
+								</h5>
+								12:00h Casa de Cultura
+							</div>
+						</div>
+						<div class="media">
+							<div class="media-left media-top">
+								<a href="#"> <img class="media-object"
+									src="<c:url value="/images/saxophone.png"/>"
+									alt="logo familia">
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">
+									<strong>COMBO Y AGRUPACIONES DE LA ESCUELA DE MÚSICA DE SAN ADRIÁN</strong>
+								</h4>
+								<h5>
+									<strong>VERMOUTH JAZZ</strong>
+								</h5>
+								13:15h América 5
+							</div>
+						</div>
+					</div>
+					
+					
+					
+				</div>
+
+				<div class="col-lg-4 separador">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">D&iacute;a 3</h3>
+						</div>
+						<div class="media">
+							<div class="media-left media-middle">
+								<a href="#"> <img class="media-object"
+									src="<c:url value="/images/family-group(1).png"/>" alt="logo música">
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">ILUNA TEATRO</h4>
+								<h5>
+									<strong>UN CUENTO DE MAGIA</strong>
+								</h5>
+								12:00h Casa de Cultura
+							</div>
+						</div>
+						<div class="panel-heading">
+							<h3 class="panel-title">D&iacute;a 3</h3>
+						</div>
+						<div class="media">
+							<div class="media-left media-middle">
+								<a href="#"> <img class="media-object"
+									src="<c:url value="/images/family-group(1).png"/>" alt="logo música">
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">COMBO ESCUELA DE MÚSICA DE PERALTA</h4>
+								<h5>
+									<strong>VERMOUTH JAZZ</strong>
+								</h5>
+								12:00h Casa de Cultura
 							</div>
 						</div>
 					</div>

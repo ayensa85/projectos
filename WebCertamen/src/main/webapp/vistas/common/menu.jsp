@@ -47,7 +47,7 @@
 							</ul></li>
 							<li><a href="${pageContext.request.contextPath}/certamen/votatugrupo"><spring:message code="menu.presentados"/></a></li>
 					<li><a href="${pageContext.request.contextPath}/certamen/horarios"><spring:message code="menu.horarios"/></a></li>
-					<li><a href="#"><spring:message code="menu.prensa"/></a></li>
+					<li><a href="https://es.patronbase.com/_SanAdrian/Productions/"><spring:message code="menu.entradas"/></a></li>
 					
 						
 					</ul>
