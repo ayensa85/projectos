@@ -43,8 +43,8 @@
 	<%@include file="common/menu.jsp"%>
 
 
-	<div class="container marketing ">
-		<div class="jumbotron">
+	<div class="container-fluid marketing ">
+		<div class="row jumbotron">
 			<div class="row separador">
 				<h1>KAOTIKO</h1>
 				<p>Kaotiko lo ha vuelto a hacer, han logrado de nuevo lo que parecía casi imposible, y es que con este “Sindicato del crimen”, con este noveno trabajo discográfico, el séptimo de estudio, los de Agurain ponen el listón más alto que nunca. A ellos nunca les hizo falta esa tercera vez, esa que suelen decir que es a la que va la vencida, siempre han sacado a la luz creaciones muy a la altura de las circunstancias, y en esta ocasión siguen siendo fieles a su habitual aptitud.

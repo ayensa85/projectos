@@ -42,15 +42,21 @@
 	<%@include file="common/menu.jsp"%>
 
 
-	<div class="container marketing ">
-		<div class="jumbotron">
+	<div class="container-fluid marketing ">
+		<div class="row jumbotron">
 			<div class="row separador">
 				<h1>GENTLEMAN CLEF</h1>
-				<p>Dos hermanos, dos instrumentos y una apuesta por crear música con auténtico feeling.
-
-Gentleman Clef es el nombre de la banda que forman Juan Serrano (piano) y Germán Serrano (voz y guitarra) en el año 2013, tras conseguir reunirse en Madrid después de varios años llevando carreras por separado. Calidad, ingenio y talento han sido algunas de las palabras más sonadas por la crítica tras sus primeros conciertos en la capital, que han servido de base para el actual crecimiento de la banda.
-
-Tras la publicación de su primer EP se disponen a adentrarse de lleno en el panorama musical, impulsados por la gran aceptación e interés que están despertando en el sector.</p>
+				<p>Dos hermanos, dos instrumentos y una apuesta por crear música
+					con auténtico feeling. Gentleman Clef es el nombre de la banda que
+					forman Juan Serrano (piano) y Germán Serrano (voz y guitarra) en el
+					año 2013, tras conseguir reunirse en Madrid después de varios años
+					llevando carreras por separado. Calidad, ingenio y talento han sido
+					algunas de las palabras más sonadas por la crítica tras sus
+					primeros conciertos en la capital, que han servido de base para el
+					actual crecimiento de la banda. Tras la publicación de su primer EP
+					se disponen a adentrarse de lleno en el panorama musical,
+					impulsados por la gran aceptación e interés que están despertando
+					en el sector.</p>
 				<div class="col-lg-8 col-md-offset-2 separador">
 					<img src="<c:url value="/images/artista-getleman.jpg"/>"
 						class="img-responsive" alt="dallasgracias" />
@@ -59,29 +65,41 @@ Tras la publicación de su primer EP se disponen a adentrarse de lleno en el pan
 
 
 			</div>
-		</div>
-		<div class="row separador">
-			<h2>CONTENIDO MULTIMEDIA</h2>
+			<div class="row separador">
+				<h2>CONTENIDO MULTIMEDIA</h2>
 
-			<div class="col-lg-6 separador">
+				<div class="col-lg-6 separador">
 
-				<iframe style="border: 0; width: 350px; height: 442px;" src="https://bandcamp.com/EmbeddedPlayer/track=1696436589/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://gentlemanclef.bandcamp.com/track/agust-n">Agustín by Gentleman Clef</a></iframe>
+					<iframe style="border: 0; width: 350px; height: 442px;"
+						src="https://bandcamp.com/EmbeddedPlayer/track=1696436589/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+						seamless>
+						<a href="http://gentlemanclef.bandcamp.com/track/agust-n">Agustín
+							by Gentleman Clef</a>
+					</iframe>
 
+				</div>
+				<div class="col-lg-6 separador">
+
+					<iframe style="border: 0; width: 350px; height: 470px;"
+						src="https://bandcamp.com/EmbeddedPlayer/album=602012922/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+						seamless>
+						<a href="http://gentlemanclef.bandcamp.com/album/storm">STORM
+							by Gentleman Clef</a>
+					</iframe>
+
+				</div>
+
+
+				<div class="col-lg-6 separador"></div>
 			</div>
-			<div class="col-lg-6 separador">
-
-				<iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=602012922/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://gentlemanclef.bandcamp.com/album/storm">STORM by Gentleman Clef</a></iframe>
-
+			<div class="row separador">
+				<iframe width="100%" height="400"
+					src="http://www.youtube.com/embed/videoseries?list=RDEMetdbPPMwTNBNokGDka5jrw&hl=es_ES "
+					frameborder="0" allowfullscreen></iframe>
 			</div>
 
+		</div>
 
-			<div class="col-lg-6 separador"></div>
-		</div>
-		<div class="row separador">
-<iframe width="100%" height="400"
-				src="http://www.youtube.com/embed/videoseries?list=RDEMetdbPPMwTNBNokGDka5jrw&hl=es_ES "
-				frameborder="0" allowfullscreen></iframe>
-		</div>
 	</div>
 
 

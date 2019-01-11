@@ -158,10 +158,7 @@
 
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="container marketing">
-		<div class="row">
+				<div class="row">
 
 			<div class="col-lg-6">
 				<div class="circulo">
@@ -256,17 +253,11 @@
 		
 		
 		</div>
+			
+			
+		</div>
+		<%@include file="common/footer.jsp"%>
 	</div>
-
-	<%@include file="common/footer.jsp"%>
-
-
-
-
-
-
-
-
 
 </body>
 </html>

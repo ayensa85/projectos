@@ -42,8 +42,8 @@
 	<%@include file="common/menu.jsp"%>
 
 
-	<div class="container marketing ">
-		<div class="jumbotron">
+	<div class="container-fluid marketing ">
+		<div class="row jumbotron">
 			<div class="row separador">
 				<h1>Dallasgracias</h1>
 				<p>Si el verdadero flirteo entre el rock psicodélico y los
@@ -74,8 +74,7 @@
 
 
 			</div>
-		</div>
-		<div class="row separador">
+			<div class="row separador">
 			<h2>CONTENIDO MULTIMEDIA</h2>
 
 			<div class="col-lg-6 separador">
@@ -108,6 +107,10 @@
 				src="http://www.youtube.com/embed/videoseries?list=PLDwCcI0JVayT3e-CaQY_RMVwfQWh-VIsc&hl=es_ES "
 				frameborder="0" allowfullscreen></iframe> 
 		</div>
+		
+		</div>
+		
+		
 	</div>
 
 

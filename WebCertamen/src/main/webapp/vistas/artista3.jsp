@@ -42,8 +42,8 @@
 	<%@include file="common/menu.jsp"%>
 
 
-	<div class="container marketing ">
-		<div class="jumbotron">
+	<div class="container-fluid marketing ">
+		<div class="row jumbotron">
 			<div class="row separador">
 				<h1>TEMPO PHOBIA</h1>
 				<p>Grupo indie logroñés formado en 2014 como dúo acústico. Con
@@ -58,11 +58,7 @@
 						class="img-responsive" alt="dallasgracias" />
 
 				</div>
-
-
-			</div>
-		</div>
-		<div class="row separador">
+				<div class="row separador">
 			<h2>CONTENIDO MULTIMEDIA</h2>
 
 			<div class="col-lg-12 separador">
@@ -85,6 +81,13 @@
 				src="http://www.youtube.com/embed/videoseries?list=PLwT4INsCL3RETddNoKeVWyG1j9l15iHNh&hl=es_ES "
 				frameborder="0" allowfullscreen></iframe>
 		</div>
+
+			</div>
+			
+			
+			
+		</div>
+	
 	</div>
 
 

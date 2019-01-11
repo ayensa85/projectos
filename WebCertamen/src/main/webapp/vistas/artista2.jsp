@@ -42,8 +42,8 @@
 	<%@include file="common/menu.jsp"%>
 
 
-	<div class="container marketing ">
-		<div class="jumbotron">
+	<div class="container-fluid marketing ">
+		<div class="row jumbotron">
 			<div class="row separador">
 				<h1>Naranja</h1>
 				<p>Naranja es un joven proyecto que combina el pop más melódico
@@ -59,7 +59,7 @@
 
 
 			</div>
-		</div>
+			
 		<div class="row separador">
 			<h2>CONTENIDO MULTIMEDIA</h2>
 
@@ -87,7 +87,10 @@
 			<iframe width="100%" height="400"
 				src="http://www.youtube.com/embed/videoseries?list=PLwB1XmA0x6mWZMwOEEByeZbg1BLj3v1oV&hl=es_ES "
 				frameborder="0" allowfullscreen></iframe>
+		</div>	
+			
 		</div>
+		
 	</div>
 
 

@@ -42,13 +42,15 @@
 	<%@include file="common/menu.jsp"%>
 
 
-	<div class="container marketing ">
-		<div class="jumbotron">
+	<div class="container-fluid marketing ">
+		<div class="row jumbotron">
 			<div class="row separador">
 				<h1>GIGANTE</h1>
-				<p>Grupo formado en Barcelona a principios de 2015, con miembros provenientes de Karma Police y Holywild bandas con las que publicarón 6 cd's y realizaron cientos de conciertos.
-
-El estilo de Gigante se enmarca dentro del pop alternativo, canciones directas, estribillos pegadizos y letras que conectan con el oyente.</p>
+				<p>Grupo formado en Barcelona a principios de 2015, con miembros
+					provenientes de Karma Police y Holywild bandas con las que
+					publicarón 6 cd's y realizaron cientos de conciertos. El estilo de
+					Gigante se enmarca dentro del pop alternativo, canciones directas,
+					estribillos pegadizos y letras que conectan con el oyente.</p>
 				<div class="col-lg-8 col-md-offset-2 separador">
 					<img src="<c:url value="/images/artista-gigante-horiz.jpg"/>"
 						class="img-responsive" alt="dallasgracias" />
@@ -57,28 +59,43 @@ El estilo de Gigante se enmarca dentro del pop alternativo, canciones directas, 
 
 
 			</div>
-		</div>
-		<div class="row separador">
-			<h2>CONTENIDO MULTIMEDIA</h2>
+			<div class="row separador">
+				<h2>CONTENIDO MULTIMEDIA</h2>
 
-			<div class="col-lg-6 separador">
+				<div class="col-lg-6 separador">
 
-				<iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=2625852519/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://estoesgigante.bandcamp.com/album/momento-de-tangencia">Momento de tangencia by GIGANTE</a></iframe>
-				</iframe>
+					<iframe style="border: 0; width: 350px; height: 470px;"
+						src="https://bandcamp.com/EmbeddedPlayer/album=2625852519/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+						seamless>
+						<a
+							href="http://estoesgigante.bandcamp.com/album/momento-de-tangencia">Momento
+							de tangencia by GIGANTE</a>
+					</iframe>
+					</iframe>
 
+				</div>
+				<div class="col-lg-6 separador">
+
+					<iframe style="border: 0; width: 350px; height: 470px;"
+						src="https://bandcamp.com/EmbeddedPlayer/album=3437699719/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+						seamless>
+						<a
+							href="http://estoesgigante.bandcamp.com/album/el-lenguaje-original">El
+							lenguaje original by GIGANTE</a>
+					</iframe>
+
+				</div>
+
+
+				<div class="col-lg-6 separador"></div>
 			</div>
-			<div class="col-lg-6 separador">
-
-				<iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=3437699719/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://estoesgigante.bandcamp.com/album/el-lenguaje-original">El lenguaje original by GIGANTE</a></iframe>
-
+			<div class="row separador">
+				<iframe width="100%" height="315"
+					src="https://www.youtube.com/embed/SdThhyW_qbQ" frameborder="0"
+					allow="autoplay; encrypted-media" allowfullscreen></iframe>
 			</div>
-
-
-			<div class="col-lg-6 separador"></div>
 		</div>
-		<div class="row separador">
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/SdThhyW_qbQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		</div>
+
 	</div>
 
 

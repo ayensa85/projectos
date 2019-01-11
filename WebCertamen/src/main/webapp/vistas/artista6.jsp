@@ -42,8 +42,8 @@
 	<%@include file="common/menu.jsp"%>
 
 
-	<div class="container marketing ">
-		<div class="jumbotron">
+	<div class="container-fluid marketing ">
+		<div class="row jumbotron">
 			<div class="row separador">
 				<h1>INVADERS</h1>
 				<p>Proyecto que combina el rock y la electrónica, iniciado por
@@ -66,8 +66,8 @@
 
 
 			</div>
-		</div>
-		<div class="row separador">
+			
+			<div class="row separador">
 			<h2>CONTENIDO MULTIMEDIA</h2>
 
 			<div class="col-lg-12 separador">
@@ -82,6 +82,8 @@
 		<div class="row separador">
 			<iframe width="100%" height="315" src="https://www.youtube.com/embed/q4YII_ybXWs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 		</div>
+		</div>
+		
 	</div>
 
 

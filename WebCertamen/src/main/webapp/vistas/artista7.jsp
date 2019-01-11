@@ -1,6 +1,6 @@
 
 
-				<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
@@ -44,39 +44,51 @@
 	<%@include file="common/menu.jsp"%>
 
 
-	<div class="container marketing ">
-		<div class="jumbotron">
+	<div class="container-fluid marketing ">
+		<div class="row jumbotron">
 			<div class="row separador">
 				<h1>WAS</h1>
-				<p>Una revolución sónica a disposición del baile.
-
-WAS han tomando todos los elementos necesarios para reivindicar unas raíces propias y recrearlas a través de sonidos contemporáneos. Una revolución sónica a disposición del baile que incluye elementos del folklore vasco (también del euskera) con instrumentos centenarios, pop electrónico, house. Han colaborado en la grabación los txalapartaris Oreka Tx y Cris de Belako. Producido por Jon Aguirrezabalaga y mezclado por Alex Ferrer.
-
-Ha sido masterizado en Sterling Sound, New York, por Randy Merrill, responsable de trabajos como ‘Uptown Funk’ de Mark Ronson y Bruno Mars o ’25’ de Adele. “Gau Ama” representa una nueva era no sólo para el grupo, sino para parte de una escena que busca trascender sin perder la identidad.</p>
+				<p>Una revolución sónica a disposición del baile. WAS han
+					tomando todos los elementos necesarios para reivindicar unas raíces
+					propias y recrearlas a través de sonidos contemporáneos. Una
+					revolución sónica a disposición del baile que incluye elementos del
+					folklore vasco (también del euskera) con instrumentos centenarios,
+					pop electrónico, house. Han colaborado en la grabación los
+					txalapartaris Oreka Tx y Cris de Belako. Producido por Jon
+					Aguirrezabalaga y mezclado por Alex Ferrer. Ha sido masterizado en
+					Sterling Sound, New York, por Randy Merrill, responsable de
+					trabajos como ‘Uptown Funk’ de Mark Ronson y Bruno Mars o ’25’ de
+					Adele. “Gau Ama” representa una nueva era no sólo para el grupo,
+					sino para parte de una escena que busca trascender sin perder la
+					identidad.</p>
 				<div class="col-lg-8 col-md-offset-2 separador">
-					<img src="<c:url value="/images/was.jpg"/>"
-						class="img-responsive" alt="dallasgracias" />
+					<img src="<c:url value="/images/was.jpg"/>" class="img-responsive"
+						alt="dallasgracias" />
 
 				</div>
 
 
 			</div>
-		</div>
-		<div class="row separador">
-			<h2>CONTENIDO MULTIMEDIA</h2>
+			<div class="row separador">
+				<h2>CONTENIDO MULTIMEDIA</h2>
 
-			<div class="col-lg-6 separador">
+				<div class="col-lg-6 separador">
 
-<iframe src="https://open.spotify.com/embed/artist/0Vy8ogc0toTWyui4W7FEB6" width="100%" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+					<iframe
+						src="https://open.spotify.com/embed/artist/0Vy8ogc0toTWyui4W7FEB6"
+						width="100%" height="400" frameborder="0" allowtransparency="true"
+						allow="encrypted-media"></iframe>
+				</div>
+				<div class="col-lg-6 separador">
+
+					<iframe width="100%" height="400"
+						src="https://www.youtube.com/embed/EWfkVNtWns8" frameborder="0"
+						allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
 			</div>
-			<div class="col-lg-6 separador">
-			
-			<iframe width="100%" height="400" src="https://www.youtube.com/embed/EWfkVNtWns8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			</div>
+			<div class="row separador"></div>
 		</div>
-		<div class="row separador">
-			
-		</div>
+
 	</div>
 
 
@@ -84,4 +96,3 @@ Ha sido masterizado en Sterling Sound, New York, por Randy Merrill, responsable 
 </body>
 </html>
 
-	

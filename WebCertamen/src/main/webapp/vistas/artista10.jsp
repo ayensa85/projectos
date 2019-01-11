@@ -43,8 +43,8 @@
 	<%@include file="common/menu.jsp"%>
 
 
-	<div class="container marketing ">
-		<div class="jumbotron">
+	<div class="container-fluid marketing ">
+		<div class="row jumbotron">
 			<div class="row separador">
 				<h1>FUEL FANDANGO</h1>
 				<p>El grupo formado por el canario Ale Acosta, productor y DJ que ya nos sorprendió con su anterior grupo Mojo Project, considerado grupo de culto con el que publicó 3 discos. La otra mitad de FUEL FANDANGO es Nita, joven cantante cordobesa pero con mucha experiencia a sus espaldas, habiendo empezado su carrera desde muy pequeñita cantando copla y flamenco hasta sus posteriores proyectos de soul, funk y electrónica. Es Puro fuego sobre el escenario.
@@ -60,8 +60,7 @@ Escrito durante el último año de silencio a medio camino entre Lanza-rote, Có
 
 
 			</div>
-		</div>
-		<div class="row separador">
+			<div class="row separador">
 			<h2>CONTENIDO MULTIMEDIA</h2>
 
 			<div class="col-lg-6 separador">
@@ -73,6 +72,8 @@ Escrito durante el último año de silencio a medio camino entre Lanza-rote, Có
 				src="http://www.youtube.com/embed/videoseries?list=PLOPrbnDJtEaj_QvaLL7tFgvv36gD3rhOc&hl=es_ES "
 				frameborder="0" allowfullscreen></iframe></div>
 		</div>
+		</div>
+		
 		
 	</div>
 
