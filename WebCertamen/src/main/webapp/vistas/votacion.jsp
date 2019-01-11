@@ -35,8 +35,8 @@
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 		crossorigin="anonymous"></script>
-		
-		<script>
+
+	<script>
 		function votoAJAX(id){
 			$.ajax({
 		        url: "${pageContext.request.contextPath}/certamen/votar/" + id,
@@ -55,42 +55,46 @@
 		}
 		</script>
 
-	
+
 
 
 
 	<%@include file="common/menu.jsp"%>
 
-	<div class="container separador marketing">
-		<div class="row separador">
-			<h1>VOTA TU GRUPO FAVORITO</h1>
-
-
-		</div>
-		<c:forEach items="${participantes}" var="participante">
+	<div class="container-fluid separador marketing">
+		<div class="row jumbotron">
 			<div class="row separador">
-				<h3>
-					<c:out value="${participante.nombreGrupo}" />
-				</h3>
-				<div class="col-lg-3 separador">
-					<div class="thumbnail">
-						<img class="media-object mx-auto"
-							src="${pageContext.request.contextPath}/myImage/imageDisplay?id=${participante.id}" />
+				<h1>VOTA TU GRUPO</h1>
 
-					</div>
-				</div>
-				<div class="col-lg-9 separador">
-					<p>${participante.cancion1}</p>
-					<p>${participante.cancion2}</p>
-					<p>${participante.cancion3}</p>
-					<p>${participante.cancion4}</p>
-				</div>
-				 <button type="button" class="btn btn-primary separador" onclick="votoAJAX(${participante.id})">Votar <c:out
-						value="${participante.nombreGrupo}" />
-                             </button>
 
 			</div>
-		</c:forEach>
+			<c:forEach items="${participantes}" var="participante">
+				<div class="row separador">
+					<h3>
+						<c:out value="${participante.nombreGrupo}" />
+					</h3>
+					<div class="col-lg-3 separador">
+						<div class="thumbnail">
+							<img class="media-object mx-auto"
+								src="${pageContext.request.contextPath}/myImage/imageDisplay?id=${participante.id}" />
+
+						</div>
+					</div>
+					<div class="col-lg-9 separador">
+						<p>${participante.cancion1}</p>
+						<p>${participante.cancion2}</p>
+						<p>${participante.cancion3}</p>
+						<p>${participante.cancion4}</p>
+					</div>
+					<button type="button" class="btn btn-primary separador"
+						onclick="votoAJAX(${participante.id})">
+						Votar
+						<c:out value="${participante.nombreGrupo}" />
+					</button>
+
+				</div>
+			</c:forEach>
+		</div>
 	</div>
 	<%@include file="common/footer.jsp"%>
 </body>

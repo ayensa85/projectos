@@ -58,99 +58,106 @@
 	</script>
 
 	<%@include file="common/menu.jsp"%>
-	<div class="container centrado marketing separador">
-		<h1>Horarios y eventos</h1>
+	<div class="container-fluid centrado marketing separador">
+		<div class="row jumbotron">
+			<h1>Horarios y eventos</h1>
 
-		<div class="row separador">
-			
+			<div class="row separador">
 
-			<div class="col-lg-4 separador">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">D&iacute;a 1</h3>
-					</div>
-					<div class="media">
-						<div class="media-left media-top">
-							<a href="#"> <img class="media-object"
-								src="<c:url value="/images/family-group(1).png"/>" alt="logo familia">
-							</a>
+
+				<div class="col-lg-4 separador">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">D&iacute;a 1</h3>
 						</div>
-						<div class="media-body">
-							<h4 class="media-heading"><strong>CIA, CLOW</strong></h4>
-							<h5><strong>Ray ada clown y sus malabares</strong></h5>
-							12:00h Casa de Cultura
+						<div class="media">
+							<div class="media-left media-top">
+								<a href="#"> <img class="media-object"
+									src="<c:url value="/images/family-group(1).png"/>"
+									alt="logo familia">
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">
+									<strong>CIA, CLOW</strong>
+								</h4>
+								<h5>
+									<strong>Ray ada clown y sus malabares</strong>
+								</h5>
+								12:00h Casa de Cultura
+							</div>
 						</div>
-					</div>
-					<div class="media">
-						<div class="media-left media-top">
-							<a href="#"> <img class="media-object"
-								src="<c:url value="/images/family-group(1).png"/>" alt="logo familia">
-							</a>
+						<div class="media">
+							<div class="media-left media-top">
+								<a href="#"> <img class="media-object"
+									src="<c:url value="/images/family-group(1).png"/>"
+									alt="logo familia">
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">
+									<strong>CARLOS ARRIEZU Y SELVA BARON</strong>
+								</h4>
+								<h5>
+									<strong>VERMOUTH JAZZ</strong>
+								</h5>
+								13:15h Bar Lord Jim
+							</div>
 						</div>
-						<div class="media-body">
-							<h4 class="media-heading"><strong>CIA, CLOW</strong></h4>
-							<h5><strong>Ray ada clown y sus malabares</strong></h5>
-							12:00h Casa de Cultura
-						</div>
-					</div>
-					<div class="media">
-						<div class="media-left media-middle">
-							<a href="#"> <img class="media-object"
-								src="<c:url value="/images/musica64.png"/>" alt="logo música">
-							</a>
-						</div>
-						<div class="media-body">
-							<h4 class="media-heading">Middle aligned media</h4>
-							...
+						<div class="media">
+							<div class="media-left media-middle">
+								<a href="#"> <img class="media-object"
+									src="<c:url value="/images/musica64.png"/>" alt="logo música">
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">Middle aligned media</h4>
+								...
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			
-			<div class="col-lg-4 separador">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">D&iacute;a 2</h3>
-					</div>
-					<div class="media">
-						<div class="media-left media-middle">
-							<a href="#"> <img class="media-object"
-								src="<c:url value="/images/musica64.png"/>" alt="logo música">
-							</a>
+
+				<div class="col-lg-4 separador">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">D&iacute;a 2</h3>
 						</div>
-						<div class="media-body">
-							<h4 class="media-heading">Middle aligned media</h4>
-							...
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 separador">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">D&iacute;a 3</h3>
-					</div>
-					<div class="media">
-						<div class="media-left media-middle">
-							<a href="#"> <img class="media-object"
-								src="<c:url value="/images/musica64.png"/>" alt="logo música">
-							</a>
-						</div>
-						<div class="media-body">
-							<h4 class="media-heading">Middle aligned media</h4>
-							...
+						<div class="media">
+							<div class="media-left media-middle">
+								<a href="#"> <img class="media-object"
+									src="<c:url value="/images/musica64.png"/>" alt="logo música">
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">Middle aligned media</h4>
+								...
+							</div>
 						</div>
 					</div>
 				</div>
+				<div class="col-lg-4 separador">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">D&iacute;a 3</h3>
+						</div>
+						<div class="media">
+							<div class="media-left media-middle">
+								<a href="#"> <img class="media-object"
+									src="<c:url value="/images/musica64.png"/>" alt="logo música">
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">Middle aligned media</h4>
+								...
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</div>
-
-
-
-
 		</div>
-
 	</div>
-
 
 	<%@include file="common/footer.jsp"%>
 </body>
