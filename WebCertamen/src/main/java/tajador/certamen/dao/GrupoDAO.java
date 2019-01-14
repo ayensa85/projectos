@@ -14,8 +14,8 @@ import tajador.certamen.model.Grupo;
 @Repository
 public interface GrupoDAO extends JpaRepository<Grupo, Long> {
 	
-	@Query(value="SELECT * FROM Grupo where edicion = :edicion", nativeQuery=true)
-    List<Grupo> findGrupoByEdicion(@Param("edicion") Integer edicion);
+	@Query(value="SELECT * FROM Grupo where edicion = :edicion and mostrar = 1", nativeQuery=true)
+    List<Grupo> findGruposMostrarByEdicion(@Param("edicion") Integer edicion);
 	
 	@Transactional
 	@Modifying
