@@ -1,5 +1,7 @@
 package tajador.certamen.dto;
 
+
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -9,7 +11,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class GrupoDTO {
-
+	
 	private Long id;
 
 	@NotEmpty
@@ -18,12 +20,12 @@ public class GrupoDTO {
 	private String nombre;
 	@NotEmpty
 	private String provincia;
-
-	private int componentes;
+	
+	 private int componentes;
 	@NotEmpty
-	@Pattern(regexp = "([69][0-9]{8})", message = "{formato.incorrecto}")
+	@Pattern(regexp="([69][0-9]{8})", message="{formato.incorrecto}")
 	private String telefono;
-
+	
 	@NotEmpty
 	@Email
 	private String email;
@@ -31,32 +33,39 @@ public class GrupoDTO {
 	private String youtube;
 
 	private String intagram;
+	
+
 
 	private String facebook;
 
 	private String twitter;
-
+	
 	@NotEmpty
-	@Size(min = 250, max = 350)
+	@Size(min = 250, max =350)
 	private String cancion1;
 	@NotEmpty
-	@Size(min = 250, max = 350)
+	@Size(min = 250, max =350)
 	private String cancion2;
-
+	
 	@NotEmpty
-	@Size(min = 250, max = 350)
+	@Size(min = 250, max =350)
 	private String cancion3;
-
+	
 	@NotEmpty
-	@Size(min = 250, max = 350)
+	@Size(min = 250, max =350)
 	private String cancion4;
-
+	
+	
 	private Integer edicion;
-
+	
+	
+	
+	
 	private Integer numVotos;
-
-	private Integer mostrar;
-
+	
+	
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -66,9 +75,9 @@ public class GrupoDTO {
 	}
 
 	public GrupoDTO(@NotBlank String nombreGrupo, @NotBlank String nombre, @NotBlank String provincia,
-			@NotNull int componentes, @NotBlank String telefono, String youtube, String email, String intagram,
-			String facebook, String twitter, @NotBlank String cancion1, @NotBlank String cancion2,
-			@NotBlank String cancion3, Integer edicion, @NotBlank String cancion4, Integer numVotos, Integer mostrar) {
+			@NotNull int componentes, @NotBlank String telefono, String youtube, String email, String intagram, String facebook,
+			String twitter, @NotBlank String cancion1, @NotBlank String cancion2, @NotBlank String cancion3, Integer edicion, 
+			@NotBlank String cancion4, Integer numVotos) {
 		this.nombreGrupo = nombreGrupo;
 		this.nombre = nombre;
 		this.provincia = provincia;
@@ -85,21 +94,13 @@ public class GrupoDTO {
 		this.cancion4 = cancion4;
 		this.edicion = edicion;
 		this.numVotos = numVotos;
-		this.mostrar = mostrar;
-
+		
 	}
 
 	public GrupoDTO() {
-
+		
 	}
-
-	public Integer getMostrar() {
-		return mostrar;
-	}
-
-	public void setMostrar(Integer mostrar) {
-		this.mostrar = mostrar;
-	}
+	
 
 	public Integer getNumVotos() {
 		return numVotos;
@@ -220,7 +221,7 @@ public class GrupoDTO {
 	public void setCancion4(String cancion4) {
 		this.cancion4 = cancion4;
 	}
-
+	
 	public Integer getEdicion() {
 		return edicion;
 	}
@@ -228,13 +229,14 @@ public class GrupoDTO {
 	public void setEdicion(Integer edicion) {
 		this.edicion = edicion;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Grupo [nombre=" + nombre + ", apellidos=" + nombreGrupo + ", provincia=" + provincia + ", componentes="
-				+ componentes + ", telefono=" + telefono + ", youtube=" + youtube + ", intagram=" + intagram
-				+ ", facebook=" + facebook + ", twitter=" + twitter + ", cancion1=" + cancion1 + ", cancion2="
-				+ cancion2 + ", cancion3=" + cancion3 + ", cancion4=" + cancion4 + ", edicion=" + edicion + ", pic=";
+		return "Grupo [nombre=" + nombre + ", apellidos=" + nombreGrupo + ", provincia=" + provincia
+				+ ", componentes=" + componentes + ", telefono=" + telefono + ", youtube=" + youtube + ", intagram="
+				+ intagram + ", facebook=" + facebook + ", twitter=" + twitter + ", cancion1=" + cancion1
+				+ ", cancion2=" + cancion2 + ", cancion3=" + cancion3 + ", cancion4=" + cancion4 + ", edicion="
+				+ edicion + ", pic=" ;
 	}
 
 }
