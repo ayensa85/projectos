@@ -162,64 +162,15 @@
 								</a>
 							</div>
 							<div class="media-body">
-								<h4 class="media-heading"><strong>ILUNA TEATRO</strong></h4>
+								<h4 class="media-heading">ILUNA TEATRO</h4>
 								<h5>
-									<strong>Un cuento de magia</strong>
+									<strong>UN CUENTO DE MAGIA</strong>
 								</h5>
 								12:00h Casa de Cultura
 							</div>
 						</div>
-					
-						<div class="media">
-							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
-									src="<c:url value="/images/saxophone.png"/>" alt="logo música">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading"><strong>COMBO ESCUELA DE MÚSICA DE PERALTA</strong></h4>
-								<h5>
-									<strong>Vermouth Jazz</strong>
-								</h5>
-								12:00h Casa de Cultura
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
-									src="<c:url value="/images/cutlery.png"/>" alt="logo música">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading"><strong>FOOD TRUCKS</strong></h4>
-								<h5>
-									<strong>Espacio Gastronómico</strong>
-								</h5>
-								21:00h Recinto Sala Luyber
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
-									src="<c:url value="/images/musica64.png"/>" alt="logo música">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading"><strong>KULTO KULTIVO</strong></h4>
-								<h4 class="media-heading"><strong>NATOS Y WAOR</strong></h4>
-								<h5>
-									<strong>Sala Luyber</strong>
-								</h5>
-								22:00h Recinto Sala Luyber
-								Precio: 15 €
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 separador">
-					<div class="panel panel-primary">
 						<div class="panel-heading">
-							<h3 class="panel-title">D&iacute;a 4</h3>
+							<h3 class="panel-title">D&iacute;a 3</h3>
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
@@ -228,77 +179,34 @@
 								</a>
 							</div>
 							<div class="media-body">
-								<h4 class="media-heading"><strong>PARQUE INFANTIL</strong></h4>
+								<h4 class="media-heading">COMBO ESCUELA DE MÚSICA DE PERALTA</h4>
 								<h5>
-									<strong>Ludoteca - Hinchables - Pista Americana - Tobogán - Portería de calan plus - Futbolín Humano - La Barredora</strong>
+									<strong>VERMOUTH JAZZ</strong>
 								</h5>
-								12:00 - 14:00 La carretera de estella
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
-									src="<c:url value="/images/cutlery.png"/>" alt="logo música">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading"><strong>FOOD TRUCKS</strong></h4>
-								<h5>
-									<strong>Espacio Gastronómico</strong>
-								</h5>
-								21:00 Recinto Sala Luyber
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
-									src="<c:url value="/images/musica64.png"/>" alt="logo música">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading"><strong>LA NIÑA HILO + MESSURA</strong></h4>
-								<h4 class="media-heading"><strong>VIVA SUECIA</strong></h4>
-								<h5>
-									<strong>Sala Luyber</strong>
-								</h5>
-								22:00 La carretera de estella	 
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
-									src="<c:url value="/images/dj.png"/>" alt="logo música">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading"><strong>DAVMA DJ</strong></h4>
-								<h5>
-									<strong>Post Party</strong>
-								</h5>
-								02:00 Bar Traveling	 
-							</div>
-						</div>
-					</div>
-					<div class="panel panel-primary">
-						<div class="panel-heading">
-							<h3 class="panel-title">D&iacute;a 5</h3>
-						</div>
-						<div class="media">
-							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
-									src="<c:url value="/images/musica64.png"/>" alt="logo música">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading"><strong>FELIX ARRIEZU</strong></h4>
-								<h5>
-									<strong>Rondas Musicales</strong>
-								</h5>
-								19:30 Bar Anay
+								12:00h Casa de Cultura
 							</div>
 						</div>
 					</div>
 				</div>
+				<div class="col-lg-4 separador">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">D&iacute;a 3</h3>
+						</div>
+						<div class="media">
+							<div class="media-left media-middle">
+								<a href="#"> <img class="media-object"
+									src="<c:url value="/images/musica64.png"/>" alt="logo música">
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">Middle aligned media</h4>
+								...
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>

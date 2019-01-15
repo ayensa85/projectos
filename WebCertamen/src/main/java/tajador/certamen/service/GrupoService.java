@@ -83,9 +83,9 @@ public class GrupoService {
 		}
 	}
 	
-	public List<GrupoDTO> mostrarGruposVotacion(Integer edicion) {
+	public List<GrupoDTO> getGruposByEdicion(Integer edicion) {
 		try {
-			List<Grupo> participantes = grupoDao.findGruposMostrarByEdicion(edicion);
+			List<Grupo> participantes = grupoDao.findGrupoByEdicion(edicion);
 
 			List<GrupoDTO> gruposdto = new ArrayList<GrupoDTO>();
 			Grupo grupo = new Grupo();
