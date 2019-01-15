@@ -53,6 +53,10 @@ public class Grupo implements Serializable{
 	@Column
 	private Integer numVotos;
 	
+	
+	@Column
+	private Integer mostrar;
+	
 	@Lob
 	@Column(name = "foto")
 	private byte[] pic;
@@ -60,7 +64,7 @@ public class Grupo implements Serializable{
 
 	public Grupo(Long id, String nombreGrupo, String nombre, String provincia, int componentes, String telefono,
 			String youtube, String intagram, String facebook, String twitter, String cancion1, String cancion2, String email, 
-			String cancion3, String cancion4, Integer edicion, byte[] pic, Integer numVotos) {
+			String cancion3, String cancion4, Integer edicion, byte[] pic, Integer numVotos, Integer mostrar) {
 		this.id = id;
 		this.nombreGrupo = nombreGrupo;
 		this.nombre = nombre;
@@ -79,9 +83,21 @@ public class Grupo implements Serializable{
 		this.edicion = edicion;
 		this.pic = pic; 
 		this.numVotos = numVotos; 
+		this.mostrar = mostrar; 
 	}
 
 	public Grupo() {
+	}
+	
+	
+	
+
+	public Integer getMostrar() {
+		return mostrar;
+	}
+
+	public void setMostrar(Integer mostrar) {
+		this.mostrar = mostrar;
 	}
 
 	public Integer getNumVotos() {
