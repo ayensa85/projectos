@@ -58,39 +58,39 @@
 						class="img-responsive" alt="dallasgracias" />
 
 				</div>
+			</div>
+			<div class="row separador">
+				<h2>CONTENIDO MULTIMEDIA</h2>
+
+				<div class="col-lg-12 separador">
+
+					<iframe style="border: 0; width: 350px; height: 470px;"
+						src="https://bandcamp.com/EmbeddedPlayer/album=264805119/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+						seamless>
+						<a href="http://tempophobiaband.bandcamp.com/album/pray-or-think">Pray
+							or Think by Tempo Phobia</a>
+					</iframe>
+
+				</div>
+
+
+				<div class="col-lg-6 separador"></div>
 				<div class="row separador">
-			<h2>CONTENIDO MULTIMEDIA</h2>
 
-			<div class="col-lg-12 separador">
-
-				<iframe style="border: 0; width: 350px; height: 470px;"
-					src="https://bandcamp.com/EmbeddedPlayer/album=264805119/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
-					seamless>
-					<a href="http://tempophobiaband.bandcamp.com/album/pray-or-think">Pray
-						or Think by Tempo Phobia</a>
-				</iframe>
-
-			</div>
+					<iframe width="100%" height="400"
+						src="http://www.youtube.com/embed/videoseries?list=PLwT4INsCL3RETddNoKeVWyG1j9l15iHNh&hl=es_ES "
+						frameborder="0" allowfullscreen></iframe>
+				</div>
 
 
-			<div class="col-lg-6 separador"></div>
-		</div>
-		<div class="row separador">
 
-			<iframe width="100%" height="400"
-				src="http://www.youtube.com/embed/videoseries?list=PLwT4INsCL3RETddNoKeVWyG1j9l15iHNh&hl=es_ES "
-				frameborder="0" allowfullscreen></iframe>
-		</div>
+
 
 			</div>
-			
-			
-			
+
 		</div>
-	
+
 	</div>
-
-
 	<%@include file="common/footer.jsp"%>
 </body>
 </html>
