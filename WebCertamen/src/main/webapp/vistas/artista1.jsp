@@ -75,42 +75,42 @@
 
 			</div>
 			<div class="row separador">
-			<h2>CONTENIDO MULTIMEDIA</h2>
+				<h2>CONTENIDO MULTIMEDIA</h2>
 
-			<div class="col-lg-6 separador">
+				<div class="col-lg-6 separador">
 
-				<iframe style="border: 0; width: 350px; height: 470px;"
-					src="https://bandcamp.com/EmbeddedPlayer/album=2038207138/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
-					seamless>
-					<a
-						href="http://dallasgracias.bandcamp.com/album/la-incre-ble-historia-de-la-chica-de-australia">La
-						increíble historia de la chica de Australia by Dallasgracias</a>
-				</iframe>
+					<iframe style="border: 0; width: 350px; height: 470px;"
+						src="https://bandcamp.com/EmbeddedPlayer/album=2038207138/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+						seamless>
+						<a
+							href="http://dallasgracias.bandcamp.com/album/la-incre-ble-historia-de-la-chica-de-australia">La
+							increíble historia de la chica de Australia by Dallasgracias</a>
+					</iframe>
 
+				</div>
+
+
+				<div class="col-lg-6 separador">
+
+					<iframe style="border: 0; width: 350px; height: 470px;"
+						src="https://bandcamp.com/EmbeddedPlayer/album=1781016252/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+						seamless>
+						<a href="http://dallasgracias.bandcamp.com/album/enefene">Enefene
+							by Dallasgracias</a>
+					</iframe>
+
+				</div>
+			</div>
+			<div class="row separador">
+
+				<iframe width="100%" height="400"
+					src="http://www.youtube.com/embed/videoseries?list=PLDwCcI0JVayT3e-CaQY_RMVwfQWh-VIsc&hl=es_ES "
+					frameborder="0" allowfullscreen></iframe>
 			</div>
 
-
-			<div class="col-lg-6 separador">
-
-				<iframe style="border: 0; width: 350px; height: 470px;"
-					src="https://bandcamp.com/EmbeddedPlayer/album=1781016252/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
-					seamless>
-					<a href="http://dallasgracias.bandcamp.com/album/enefene">Enefene
-						by Dallasgracias</a>
-				</iframe>
-
-			</div>
 		</div>
-		<div class="row separador">
-			
-			<iframe width="100%" height="400"
-				src="http://www.youtube.com/embed/videoseries?list=PLDwCcI0JVayT3e-CaQY_RMVwfQWh-VIsc&hl=es_ES "
-				frameborder="0" allowfullscreen></iframe> 
-		</div>
-		
-		</div>
-		
-		
+
+
 	</div>
 
 
