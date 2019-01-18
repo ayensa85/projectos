@@ -72,10 +72,10 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-top">
-								<a href="#"> <img class="media-object"
+								 <img class="media-object"
 									src="<c:url value="/images/family-group(1).png"/>"
 									alt="logo familia">
-								</a>
+								
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -89,9 +89,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-top">
-								<a href="#"> <img class="media-object"
+								 <img class="media-object"
 									src="<c:url value="/images/saxophone.png"/>" alt="logo familia">
-								</a>
+								
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -111,10 +111,10 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-top">
-								<a href="#"> <img class="media-object"
+								<img class="media-object"
 									src="<c:url value="/images/family-group(1).png"/>"
 									alt="logo familia">
-								</a>
+								
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -128,9 +128,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-top">
-								<a href="#"> <img class="media-object"
+								 <img class="media-object"
 									src="<c:url value="/images/saxophone.png"/>" alt="logo familia">
-								</a>
+								
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -156,10 +156,10 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
+								 <img class="media-object"
 									src="<c:url value="/images/family-group(1).png"/>"
 									alt="logo música">
-								</a>
+								
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -175,10 +175,10 @@
 
 						<div class="media">
 							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
+								 <img class="media-object"
 									src="<c:url value="/images/saxophone.png"/>"
 									alt="logo música">
-								</a>
+								
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -192,9 +192,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
+								 <img class="media-object"
 									src="<c:url value="/images/cutlery.png"/>" alt="logo música">
-								</a>
+								
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -208,9 +208,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
+								 <img class="media-object"
 									src="<c:url value="/images/musica64.png"/>" alt="logo música">
-								</a>
+								
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -234,10 +234,10 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
+								<img class="media-object"
 									src="<c:url value="/images/family-group(1).png"/>"
 									alt="logo música">
-								</a>
+								
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -253,9 +253,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
+								 <img class="media-object"
 									src="<c:url value="/images/cutlery.png"/>" alt="logo música">
-								</a>
+								
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -269,9 +269,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
+								<img class="media-object"
 									src="<c:url value="/images/musica64.png"/>" alt="logo música">
-								</a>
+							
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -288,9 +288,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
+								<img class="media-object"
 									src="<c:url value="/images/dj.png"/>" alt="logo música">
-								</a>
+								
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -309,9 +309,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								<a href="#"> <img class="media-object"
+								 <img class="media-object"
 									src="<c:url value="/images/saxophone.png"/>" alt="logo música">
-								</a>
+								
 							</div>
 							<div class="media-body">
 

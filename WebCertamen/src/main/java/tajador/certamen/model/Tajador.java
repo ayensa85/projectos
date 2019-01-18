@@ -1,5 +1,6 @@
 package tajador.certamen.model;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,13 +15,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table
-public class Tajador {
+public class Tajador implements UserDetails{
 
 	@Id
 	@GeneratedValue
@@ -31,11 +32,12 @@ public class Tajador {
 
 	@Column(name = "password")
 	@Length(min = 5, message = "tajador.password.min")
-	@NotEmpty(message = "tajador.password.obligatorio")
 	private String password;
 
-	@Email(message = "tajador.mail")
-	@NotEmpty(message = "tajador.mail.obligatorio")
+	@Column
+	private String matchPassword;
+	
+	@Column(unique=true)
 	private String email;
 
 	@Column
@@ -43,10 +45,10 @@ public class Tajador {
 
 	@Column
 	private String dni;
-	
-	@ManyToOne
+
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Rol rol;
+    private Role role;
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinTable(name = "tajador_tarea", joinColumns = { @JoinColumn(name = "tajador_id") }, inverseJoinColumns = {
@@ -55,21 +57,29 @@ public class Tajador {
 
 	
 
-	public Tajador(long id, String nombre,
-			@Length(min = 5, message = "tajador.password.min") @NotEmpty(message = "tajador.password.obligatorio") String password,
-			@Email(message = "tajador.mail") @NotEmpty(message = "*Please provide an email") String email, String tfno,
-			String dni, Rol rol, List<Tarea> tareasPendientes) {
+	public Tajador(long id, String nombre, @Length(min = 5, message = "tajador.password.min") String password,
+			String matchPassword, String email, String tfno, String dni, Role role, List<Tarea> tareasPendientes) {
+		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.password = password;
+		this.matchPassword = matchPassword;
 		this.email = email;
 		this.tfno = tfno;
 		this.dni = dni;
-		this.rol = rol;
+		this.role = role;
 		this.tareasPendientes = tareasPendientes;
 	}
 
 	public Tajador() {
+	}
+
+	public String getMatchPassword() {
+		return matchPassword;
+	}
+
+	public void setMatchPassword(String matchPassword) {
+		this.matchPassword = matchPassword;
 	}
 
 	public long getId() {
@@ -79,8 +89,6 @@ public class Tajador {
 	public void setId(long id) {
 		this.id = id;
 	}
-	
-	
 
 	public String getPassword() {
 		return password;
@@ -96,14 +104,6 @@ public class Tajador {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public Rol getRoles() {
-		return rol;
-	}
-
-	public void setRoles(Rol roles) {
-		this.rol = roles;
 	}
 
 	public String getNombre() {
@@ -137,5 +137,51 @@ public class Tajador {
 	public void setTareasPendientes(List<Tarea> tareasPendientes) {
 		this.tareasPendientes = tareasPendientes;
 	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return nombre;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	
 
 }

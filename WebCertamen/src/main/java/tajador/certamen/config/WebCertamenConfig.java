@@ -18,9 +18,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 
 @Configuration
-@ComponentScan(basePackages={"tajador.certamen.service" })
+@ComponentScan(basePackages = { "tajador.certamen.service" })
 public class WebCertamenConfig implements WebMvcConfigurer {
-
+	
+	
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
 		LocalContainerEntityManagerFactoryBean lc = new LocalContainerEntityManagerFactoryBean();
@@ -34,34 +35,35 @@ public class WebCertamenConfig implements WebMvcConfigurer {
 		p.setProperty("hibernate.show_sql", "true");
 		p.setProperty("hibernate.format_sql", "true");
 		lc.setJpaProperties(p);
-		return lc;
+		return lc;              
 
 	}
-	
-	 @Bean
-	    public LocaleChangeInterceptor localeInterceptor(){
-	        LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
-	        interceptor.setParamName("lang");
-	        return interceptor;
-	    }
-	 
-	 @Override
-	    public void addInterceptors(InterceptorRegistry registry) {
-	        registry.addInterceptor(localeInterceptor());
-	    }
 
-	 @Bean
-	    public MessageSource messageSource(){
-	        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-	        messageSource.setBasename("classpath:i18n/messages");
-	        messageSource.setDefaultEncoding("UTF-8");
-	        return messageSource;
-	    }
-	 @Bean
-	 public LocalValidatorFactoryBean getValidator() {
-	     LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
-	     bean.setValidationMessageSource(messageSource());
-	     return bean;
-	 }
+	@Bean
+	public LocaleChangeInterceptor localeInterceptor() {
+		LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
+		interceptor.setParamName("lang");
+		return interceptor;
+	}
+
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(localeInterceptor());
+	}
+
+	@Bean
+	public MessageSource messageSource() {
+		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+		messageSource.setBasename("classpath:i18n/messages");
+		messageSource.setDefaultEncoding("UTF-8");
+		return messageSource;
+	}
+
+	@Bean
+	public LocalValidatorFactoryBean getValidator() {
+		LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
+		bean.setValidationMessageSource(messageSource());
+		return bean;
+	}
 
 }

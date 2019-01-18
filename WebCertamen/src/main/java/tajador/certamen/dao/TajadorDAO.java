@@ -10,7 +10,12 @@ import tajador.certamen.model.Tajador;
 @Repository
 public interface TajadorDAO extends JpaRepository<Tajador, Long> {
 
-//	@Query("SELECT * FROM tajador where email = :email")
-//	Tajador findTajadorByMail(@Param("email") String email);
+	@Query(value="SELECT * FROM tajador where email = :email and password = :password", nativeQuery=true)
+	Tajador findTajadorByMailandPassword(@Param("email") String email, @Param("password") String password);
+	
+	
+	
+	@Query(value="SELECT * FROM tajador where email = :email ", nativeQuery=true)
+	Tajador findTajadorByMail(@Param("email") String email);
 
 }
