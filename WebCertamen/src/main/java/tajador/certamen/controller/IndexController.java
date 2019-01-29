@@ -33,18 +33,14 @@ import tajador.certamen.service.NoticiasService;
 @Controller
 @RequestMapping("/certamen")
 public class IndexController {
-	
 
 	private static Logger logger = Logger.getLogger(IndexController.class);
-	
-	
-	private String lastIp="";
-	
-	
-	
+
+	private String lastIp = "";
+
 	@Value("${certamen.edicion}")
 	String edicion;
-	
+
 	@Value("${certamen.numVotos.inicial}")
 	String numVotosInicial;
 
@@ -173,17 +169,18 @@ public class IndexController {
 	}
 
 	@RequestMapping(value = "/bases/participar/guardarParticipante", method = RequestMethod.POST)
-	public String goToAniadirParticipante(@RequestParam("foto") MultipartFile file, @ModelAttribute("participante") @Valid GrupoDTO participante, BindingResult result,  Model model,
-			RedirectAttributes ra) throws Exception{
-		 if (result.hasErrors()) {
+	public String goToAniadirParticipante(@RequestParam("foto") MultipartFile file,
+			@ModelAttribute("participante") @Valid GrupoDTO participante, BindingResult result, Model model,
+			RedirectAttributes ra) throws Exception {
+		if (result.hasErrors()) {
 			return "participar";
-		} 
-		 else {
+		} else {
 			try {
-				
+
 				participante.setEdicion(Integer.parseInt(edicion));
 				participante.setNumVotos(Integer.parseInt(numVotosInicial));
-				IntegerWrapper correcto = new IntegerWrapper(Integer.valueOf(grupoService.guardarGrupo(participante, file)));
+				IntegerWrapper correcto = new IntegerWrapper(
+						Integer.valueOf(grupoService.guardarGrupo(participante, file)));
 				ra.addFlashAttribute("participanteAniadido", correcto);
 			} catch (Exception e) {
 				System.out.println(e);
@@ -195,42 +192,53 @@ public class IndexController {
 
 		return "redirect:/certamen/bases/participar";
 	}
-	
+
 	@RequestMapping(value = "/votatugrupo")
 	public String goTovotaTuGrupo(Model model) {
-		
-		List<GrupoDTO> grupos= grupoService.getGruposByEdicion(22);
+
+		List<GrupoDTO> grupos = grupoService.getGruposByEdicion(22);
 		model.addAttribute("participantes", grupos);
 		return "votacion";
-		
+
 	}
-	
-	
+
 	@RequestMapping(value = "/votar/{id}")
 	public ResponseEntity<String> votarGrupo(@PathVariable long id, Model model, HttpServletRequest request) {
 		try {
-			if("".equals(lastIp) || !lastIp.equals(request.getRemoteAddr())) {
-				
+			if ("".equals(lastIp) || !lastIp.equals(request.getRemoteAddr())) {
+
 				grupoService.updateVotoById(id);
 				lastIp = request.getRemoteAddr();
 				return new ResponseEntity<String>(HttpStatus.OK);
-				
-			}else {
-				
+
+			} else {
+
 				return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
-				
-	 		}
-		}catch(JpaSystemException e) {
+
+			}
+		} catch (JpaSystemException e) {
 			return new ResponseEntity<String>(HttpStatus.EXPECTATION_FAILED);
-			
+
 		}
-		
-		
-		
 	}
-	
+
+	@RequestMapping(value = "/generarReproductores/{id}")
+	public ResponseEntity<String> generarReproductores(Model model, HttpServletRequest request) {
+		try {
+			
+			
+
+			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+
+		} catch (JpaSystemException e) {
+			return new ResponseEntity<String>(HttpStatus.EXPECTATION_FAILED);
+
+		}
+
+	}
+
 	@RequestMapping("/horarios")
-	public String goToAcceso() {
+	public String goToHorarios() {
 		return "horarios";
 	}
 

@@ -37,10 +37,10 @@
 		crossorigin="anonymous"></script>
 
 	<script>
-		function votoAJAX(id) {
+		function generarReproductores() {
 			$
 					.ajax({
-						url : "${pageContext.request.contextPath}/certamen/votar/"
+						url : "${pageContext.request.contextPath}/certamen/privado/generarReproductores/"
 								+ id,
 						success : function() {
 							//your code here
@@ -72,10 +72,10 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-top">
-								 <img class="media-object"
+								<a href="#"> <img class="media-object"
 									src="<c:url value="/images/family-group(1).png"/>"
 									alt="logo familia">
-								
+								</a>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -89,9 +89,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-top">
-								 <img class="media-object"
+								<a href="#"> <img class="media-object"
 									src="<c:url value="/images/saxophone.png"/>" alt="logo familia">
-								
+								</a>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -111,10 +111,10 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-top">
-								<img class="media-object"
+								<a href="#"> <img class="media-object"
 									src="<c:url value="/images/family-group(1).png"/>"
 									alt="logo familia">
-								
+								</a>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -128,9 +128,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-top">
-								 <img class="media-object"
+								<a href="#"> <img class="media-object"
 									src="<c:url value="/images/saxophone.png"/>" alt="logo familia">
-								
+								</a>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -156,10 +156,10 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								 <img class="media-object"
+								<a href="#"> <img class="media-object"
 									src="<c:url value="/images/family-group(1).png"/>"
 									alt="logo música">
-								
+								</a>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -175,10 +175,9 @@
 
 						<div class="media">
 							<div class="media-left media-middle">
-								 <img class="media-object"
-									src="<c:url value="/images/saxophone.png"/>"
-									alt="logo música">
-								
+								<a href="#"> <img class="media-object"
+									src="<c:url value="/images/saxophone.png"/>" alt="logo música">
+								</a>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -192,9 +191,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								 <img class="media-object"
+								<a href="#"> <img class="media-object"
 									src="<c:url value="/images/cutlery.png"/>" alt="logo música">
-								
+								</a>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -208,9 +207,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								 <img class="media-object"
+								<a href="#"> <img class="media-object"
 									src="<c:url value="/images/musica64.png"/>" alt="logo música">
-								
+								</a>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -234,10 +233,10 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								<img class="media-object"
+								<a href="#"> <img class="media-object"
 									src="<c:url value="/images/family-group(1).png"/>"
 									alt="logo música">
-								
+								</a>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -253,9 +252,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								 <img class="media-object"
+								<a href="#"> <img class="media-object"
 									src="<c:url value="/images/cutlery.png"/>" alt="logo música">
-								
+								</a>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -269,9 +268,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								<img class="media-object"
+								<a href="#"> <img class="media-object"
 									src="<c:url value="/images/musica64.png"/>" alt="logo música">
-							
+								</a>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -288,9 +287,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								<img class="media-object"
+								<a href="#"> <img class="media-object"
 									src="<c:url value="/images/dj.png"/>" alt="logo música">
-								
+								</a>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading">
@@ -309,9 +308,9 @@
 						</div>
 						<div class="media">
 							<div class="media-left media-middle">
-								 <img class="media-object"
+								<a href="#"> <img class="media-object"
 									src="<c:url value="/images/saxophone.png"/>" alt="logo música">
-								
+								</a>
 							</div>
 							<div class="media-body">
 
@@ -327,6 +326,19 @@
 					</div>
 				</div>
 
+			</div>
+
+			<div class="row">
+			
+			<div class="col-lg-3">
+
+				<button type="button" class="btn btn-primary separador"
+					onclick="generarReproductores()">
+					Votar
+					<c:out value="${participante.nombreGrupo}" />
+				</button>
+
+			</div>
 			</div>
 		</div>
 	</div>
