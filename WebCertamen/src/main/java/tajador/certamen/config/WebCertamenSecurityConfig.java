@@ -29,17 +29,14 @@ public class WebCertamenSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/", "/index", "/doLogin", "/login", "/logout", "/accessDenied", 
-				"/goSignIn", "/signIn", "/signinInfo", "/errorPage", "/activateMail", 
-				"/signInFirstStep", "/signInSecondStep", "/signInThirdStep", 
-				"/signInFourthStep", "/signInFifthStep", "/signInReturnStep", 
-				"/signInFourthStepNoValidation", "/signInSave", "/goRetrievePassword", 
-				/*"/goRetrievePasswordInvoice",*/ "/getInstructions.pdf", "/retrievePassword", 
-				/*"/retrievePasswordInvoice",*/ "/checkFiscalNif.json", "/checkValidNif.json", 
-				"/contact", "/faq", "/legal", "/static/**").permitAll().and()
-				.formLogin().loginPage("/login").usernameParameter("username").passwordParameter("password").and()
-				.logout().logoutSuccessUrl("/login?logout").and().exceptionHandling().accessDeniedPage("/403").and()
-				.csrf();
+		http.authorizeRequests()
+				.antMatchers("/", "/index", "/asociacion", "/elfestival", "/comollegar", "/alojamiento", "/bases",
+						"/grupo1", "/grupo2", "/grupo3", "/grupo4", "/grupo5", "/grupo6", "/grupo7", "/grupo8",
+						"/grupo9", "/grupo10", "/bases/downloadpdf", "/bases/participar",
+						"/bases/participar/guardarParticipante", "/votatugrupo", "/votar/*", "/horarios")
+				.permitAll().and().formLogin().defaultSuccessUrl("/camerinos/success").and().formLogin()
+				.loginPage("/login").usernameParameter("username").passwordParameter("password").and().logout()
+				.logoutSuccessUrl("/login?logout").and().exceptionHandling().accessDeniedPage("/403").and().csrf();
 	}
 
 	@Bean(name = "passwordEncoder")

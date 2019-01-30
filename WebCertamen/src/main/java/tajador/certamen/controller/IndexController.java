@@ -222,21 +222,6 @@ public class IndexController {
 		}
 	}
 
-	@RequestMapping(value = "/generarReproductores/{id}")
-	public ResponseEntity<String> generarReproductores(Model model, HttpServletRequest request) {
-		try {
-			
-			
-
-			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
-
-		} catch (JpaSystemException e) {
-			return new ResponseEntity<String>(HttpStatus.EXPECTATION_FAILED);
-
-		}
-
-	}
-
 	@RequestMapping("/horarios")
 	public String goToHorarios() {
 		return "horarios";
