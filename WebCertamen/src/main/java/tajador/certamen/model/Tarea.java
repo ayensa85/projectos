@@ -80,7 +80,4 @@ public class Tarea {
 		return "Tarea [id=" + id + ", nombreTarea=" + nombreTarea + ", realizada=" + realizada + ", tajador=" + tajadores
 				+ "]";
 	}
-	
-	
-
 }

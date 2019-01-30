@@ -49,7 +49,7 @@ public class User implements Serializable{
 	private String dni;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	@JoinColumn(name = "rol_id")
     private UserRole rol;
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })

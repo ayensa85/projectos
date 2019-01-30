@@ -38,6 +38,7 @@ public class WebCertamenSecurityConfig extends WebSecurityConfigurerAdapter {
 				.loginPage("/login").usernameParameter("username").passwordParameter("password").and().logout()
 				.logoutSuccessUrl("/login?logout").and().exceptionHandling().accessDeniedPage("/403").and().csrf();
 	}
+	
 
 	@Bean(name = "passwordEncoder")
 	public PasswordEncoder passwordencoder() {
