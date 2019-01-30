@@ -14,12 +14,12 @@ public class CustomUserDetails extends User implements UserDetails {
 	
 
 	public CustomUserDetails(User user) {
-		super(user);
+		super();
 	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		String roles = this.getRoles().getRole();
+		String roles = this.getRol().getRole();
 		return AuthorityUtils.commaSeparatedStringToAuthorityList(roles);
 	}
 

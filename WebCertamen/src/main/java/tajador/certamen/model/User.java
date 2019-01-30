@@ -73,7 +73,7 @@ public class User implements Serializable{
 		this.tareasPendientes = tareasPendientes;
 	}
 
-	public User(User user) {
+	public User() {
 	}
 
 	public long getId() {
@@ -102,11 +102,11 @@ public class User implements Serializable{
 		this.email = email;
 	}
 
-	public UserRole getRoles() {
+	public UserRole getRol() {
 		return rol;
 	}
 
-	public void setRoles(UserRole roles) {
+	public void setRol(UserRole roles) {
 		this.rol = roles;
 	}
 

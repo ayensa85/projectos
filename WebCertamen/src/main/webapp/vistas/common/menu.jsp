@@ -51,7 +51,7 @@
 					
 						
 					</ul>
-						<form class="navbar-form navbar-right">
+						<form class="navbar-form navbar-right" action="${pageContext.request.contextPath}/login">
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="email">
 								<input type="text" class="form-control" placeholder="pass">

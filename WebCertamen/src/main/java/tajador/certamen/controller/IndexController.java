@@ -27,8 +27,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import tajador.certamen.dto.GrupoDTO;
 import tajador.certamen.model.IntegerWrapper;
+import tajador.certamen.model.User;
+import tajador.certamen.model.UserRole;
 import tajador.certamen.service.GrupoService;
 import tajador.certamen.service.NoticiasService;
+import tajador.certamen.service.UserService;
 
 @Controller
 @RequestMapping("/certamen")
@@ -46,6 +49,9 @@ public class IndexController {
 
 	@Autowired
 	GrupoService grupoService;
+	
+	@Autowired
+	UserService userService;
 
 	@Autowired
 	NoticiasService noticiasService;
@@ -58,6 +64,14 @@ public class IndexController {
 
 	@RequestMapping(value = "/elfestival")
 	public String goTobases(Model model) {
+		
+		User usuario=new User();
+		usuario.setNombre("Juan");
+		usuario.setEmail("ayensa85@gmail.com");
+		usuario.setPassword("Hardwork85");
+		usuario.setRol(UserRole.USER);
+		usuario.setTfno("676656109");
+		userService.registerNewUserAccount(usuario);
 
 		return "elfestival";
 	}

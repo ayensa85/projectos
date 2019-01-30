@@ -35,8 +35,8 @@ public class WebCertamenSecurityConfig extends WebSecurityConfigurerAdapter {
 						"/grupo9", "/grupo10", "/bases/downloadpdf", "/bases/participar",
 						"/bases/participar/guardarParticipante", "/votatugrupo", "/votar/*", "/horarios")
 				.permitAll().and().formLogin().defaultSuccessUrl("/camerinos/success").and().formLogin()
-				.loginPage("/login").usernameParameter("username").passwordParameter("password").and().logout()
-				.logoutSuccessUrl("/login?logout").and().exceptionHandling().accessDeniedPage("/403").and().csrf();
+				.loginPage("/index").usernameParameter("username").passwordParameter("password").and().logout()
+				.logoutSuccessUrl("/login?logout").and().exceptionHandling().accessDeniedPage("/").and().csrf();
 	}
 	
 

@@ -13,7 +13,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "rol")
-public class UserRole {
+public enum UserRole {
+	
+	ADMIN(1,"ADMIN"), USER(2,"USER");
 	
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,14 +29,14 @@ public class UserRole {
     
     
     
-	public UserRole(int id, String role) {
+	UserRole(int id, String role) {
 		this.id = id;
 		this.role = role;
 	}
 
 
 
-	public UserRole() {
+	UserRole() {
 	}
 
 
