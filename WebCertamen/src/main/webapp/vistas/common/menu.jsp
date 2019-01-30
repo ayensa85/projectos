@@ -51,12 +51,12 @@
 					
 						
 					</ul>
-						<form class="navbar-form navbar-right" action="${pageContext.request.contextPath}/login">
+						<form class="navbar-form navbar-right" action="login">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="email">
-								<input type="text" class="form-control" placeholder="pass">
+								<input type="text" class="form-control" placeholder="email" name="email">
+								<input type="password" class="form-control" placeholder="password" name="password">
 							</div>
-							<button type="submit" class="btn btn-default">Submit</button>
+							<button type="submit" class="btn btn-default">Camerinos</button>
 						</form>
 					
 						
