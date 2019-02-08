@@ -13,8 +13,8 @@ public class CustomUserDetails extends User implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	
 
-	public CustomUserDetails(User user) {
-		super();
+	public CustomUserDetails(final User user) {
+		super(user);
 	}
 
 	@Override
@@ -46,5 +46,9 @@ public class CustomUserDetails extends User implements UserDetails {
 	@Override
 	public String getUsername() {
 		return super.getEmail();
+	}
+	@Override
+	public String getPassword() {
+		return super.getPassword();
 	}
 }

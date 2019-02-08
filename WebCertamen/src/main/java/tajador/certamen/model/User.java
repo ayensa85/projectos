@@ -75,6 +75,17 @@ public class User implements Serializable{
 
 	public User() {
 	}
+	public User(User user) {
+		this.id = user.getId();
+		this.nombre = user.getNombre();
+		this.password = user.getPassword();
+		this.email = user.getEmail();
+		this.tfno = user.getTfno();
+		this.dni = user.getDni();
+		this.rol = user.getRol();
+		this.tareasPendientes = user.getTareasPendientes();
+		
+	}
 
 	public long getId() {
 		return id;

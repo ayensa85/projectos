@@ -10,33 +10,26 @@ import tajador.certamen.service.GrupoService;
 import tajador.certamen.service.NoticiasService;
 
 @Controller
-@RequestMapping("/camerinos")
 public class CamerinosController {
 	
 
 
 
-		private static Logger logger = Logger.getLogger(IndexController.class);
-
-		private String lastIp = "";
-
-		@Value("${certamen.edicion}")
-		String edicion;
-
-		@Value("${certamen.numVotos.inicial}")
-		String numVotosInicial;
-
-		@Autowired
-		GrupoService grupoService;
-
-		@Autowired
-		NoticiasService noticiasService;
-		
-		
+//		private static Logger logger = Logger.getLogger(IndexController.class);
+//
+//		private String lastIp = "";
+//		
+//		
 		@RequestMapping("/success")
-		public String goToHorarios() {
+		public String goToSuccessS() {
 			return "horarios";
 		}
+//		
+//		
+//		@RequestMapping("/error")
+//		public String goToError() {
+//			return "horarios";
+//		}
 
 
 
