@@ -1,7 +1,9 @@
 package tajador.certamen.controller;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -66,10 +68,12 @@ public class IndexController {
 	public String goTobases(Model model) {
 		
 		User usuario=new User();
+		List<UserRole> rol =  new ArrayList<UserRole>();
+		rol.add(new UserRole(1, "ADMIN"));
 		usuario.setNombre("Juan");
 		usuario.setEmail("ayensa85@gmail.com");
 		usuario.setPassword("Hardwork85");
-		usuario.setRol(new UserRole(1, "ADMIN"));
+		usuario.setRol(rol);
 		usuario.setTfno("676656109");
 		userService.registerNewUserAccount(usuario);
 

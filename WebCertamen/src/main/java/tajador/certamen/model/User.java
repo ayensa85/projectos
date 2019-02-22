@@ -51,7 +51,7 @@ public class User implements Serializable{
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "rol_id")
-    private Set<UserRole> rol;
+    private List<UserRole> rol;
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinTable(name = "tajador_tarea", joinColumns = { @JoinColumn(name = "tajador_id") }, inverseJoinColumns = {
@@ -63,7 +63,7 @@ public class User implements Serializable{
 	public User(long id, String nombre,
 			@Length(min = 5, message = "tajador.password.min") @NotEmpty(message = "tajador.password.obligatorio") String password,
 			@Email(message = "tajador.mail") @NotEmpty(message = "*Please provide an email") String email, String tfno,
-			String dni, Set<UserRole> rol, List<Tarea> tareasPendientes) {
+			String dni, List<UserRole> rol, List<Tarea> tareasPendientes) {
 		this.id = id;
 		this.nombre = nombre;
 		this.password = password;
@@ -116,11 +116,11 @@ public class User implements Serializable{
 		this.email = email;
 	}
 
-	public Set<UserRole> getRol() {
+	public List<UserRole> getRol() {
 		return rol;
 	}
 
-	public void setRol(Set<UserRole> roles) {
+	public void setRol(List<UserRole> roles) {
 		this.rol = roles;
 	}
 
