@@ -2,9 +2,11 @@ package tajador.certamen.model;
 
 import java.util.Collection;
 import java.util.List;
-
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.StringUtils;
 
@@ -16,11 +18,10 @@ public class CustomUserDetails extends User implements UserDetails {
 	public CustomUserDetails(final User user) {
 		super(user);
 	}
-
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		String roles = this.getRol().getRole();
-		return AuthorityUtils.commaSeparatedStringToAuthorityList(roles);
+		return getRol().stream().map(role ->  new SimpleGrantedAuthority("ROLE" + role.getRole())).collect(Collectors.toList());
 	}
 
 	@Override

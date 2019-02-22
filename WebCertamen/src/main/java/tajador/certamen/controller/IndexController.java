@@ -69,7 +69,7 @@ public class IndexController {
 		usuario.setNombre("Juan");
 		usuario.setEmail("ayensa85@gmail.com");
 		usuario.setPassword("Hardwork85");
-		usuario.setRol(UserRole.USER);
+		usuario.setRol(new UserRole(1, "ADMIN"));
 		usuario.setTfno("676656109");
 		userService.registerNewUserAccount(usuario);
 

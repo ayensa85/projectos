@@ -10,6 +10,7 @@ import tajador.certamen.service.GrupoService;
 import tajador.certamen.service.NoticiasService;
 
 @Controller
+@RequestMapping("/certamen")
 public class CamerinosController {
 	
 
