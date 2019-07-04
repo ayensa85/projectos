@@ -1,9 +1,7 @@
 package tajador.certamen.controller;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,8 +27,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import tajador.certamen.dto.GrupoDTO;
 import tajador.certamen.model.IntegerWrapper;
-import tajador.certamen.model.User;
-import tajador.certamen.model.UserRole;
 import tajador.certamen.service.GrupoService;
 import tajador.certamen.service.NoticiasService;
 import tajador.certamen.service.UserService;
@@ -66,16 +62,6 @@ public class IndexController {
 
 	@RequestMapping(value = "/elfestival")
 	public String goTobases(Model model) {
-		
-		User usuario=new User();
-		List<UserRole> rol =  new ArrayList<UserRole>();
-		rol.add(new UserRole(1, "ADMIN"));
-		usuario.setNombre("Juan");
-		usuario.setEmail("ayensa85@gmail.com");
-		usuario.setPassword("Hardwork85");
-		usuario.setRol(rol);
-		usuario.setTfno("676656109");
-		userService.registerNewUserAccount(usuario);
 
 		return "elfestival";
 	}

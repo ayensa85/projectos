@@ -13,7 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
@@ -49,11 +48,13 @@ public class User implements Serializable{
 	@Column
 	private String dni;
 	
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "rol_id")
-    private List<UserRole> rol;
+  private int active;
 
-	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+  @ManyToMany(cascade = { CascadeType.MERGE })
+  @JoinTable(name = "rol_user", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+  private Set<UserRole> roles;
+
+  @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinTable(name = "tajador_tarea", joinColumns = { @JoinColumn(name = "tajador_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "tarea_id") })
 	private List<Tarea> tareasPendientes;
@@ -63,14 +64,14 @@ public class User implements Serializable{
 	public User(long id, String nombre,
 			@Length(min = 5, message = "tajador.password.min") @NotEmpty(message = "tajador.password.obligatorio") String password,
 			@Email(message = "tajador.mail") @NotEmpty(message = "*Please provide an email") String email, String tfno,
-			String dni, List<UserRole> rol, List<Tarea> tareasPendientes) {
+      String dni, Set<UserRole> roles, List<Tarea> tareasPendientes) {
 		this.id = id;
 		this.nombre = nombre;
 		this.password = password;
 		this.email = email;
 		this.tfno = tfno;
 		this.dni = dni;
-		this.rol = rol;
+    this.roles = roles;
 		this.tareasPendientes = tareasPendientes;
 	}
 
@@ -85,7 +86,7 @@ public class User implements Serializable{
 		this.email = user.getEmail();
 		this.tfno = user.getTfno();
 		this.dni = user.getDni();
-		this.rol = user.getRol();
+    this.roles = user.getRoles();
 		this.tareasPendientes = user.getTareasPendientes();
 		
 	}
@@ -112,17 +113,27 @@ public class User implements Serializable{
 		return email;
 	}
 
-	public void setEmail(String email) {
+  public int getActive() {
+    return active;
+  }
+
+  public void setActive(int active) {
+    this.active = active;
+  }
+
+  public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public List<UserRole> getRol() {
-		return rol;
+  public Set<UserRole> getRoles() {
+    return roles;
 	}
 
-	public void setRol(List<UserRole> roles) {
-		this.rol = roles;
-	}
+  public void setRoles(Set<UserRole> roles) {
+    this.roles = roles;
+  }
+
+
 
 	public String getNombre() {
 		return nombre;

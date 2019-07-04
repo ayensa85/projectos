@@ -1,9 +1,10 @@
 package tajador.certamen.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import tajador.certamen.dao.RolDAO;
 import tajador.certamen.dao.UserDAO;
 import tajador.certamen.model.User;
 
@@ -13,8 +14,21 @@ public class UserService {
 	@Autowired
 	private UserDAO userDao;
 
-	@Autowired
-	private PasswordEncoder bCryptPasswordEncoder;
+  private RolDAO roleRepository;
+
+  private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+  @Autowired
+  public UserService(UserDAO userRepository, RolDAO roleRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
+    this.userDao = userRepository;
+    this.roleRepository = roleRepository;
+    this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+  }
+
+  public User findUserByEmail(String email) {
+    return userDao.findByUserName(email);
+  }
+
 		
 
 	public Integer registerNewUserAccount(User userReg) {
@@ -31,7 +45,7 @@ public class UserService {
 			user.setEmail(userReg.getEmail());
 			user.setPassword(bCryptPasswordEncoder.encode(userReg.getPassword()));
 
-			user.setRol(userReg.getRol());
+      user.setRoles(userReg.getRoles());
 			userDao.save(user);
 			return 1;
 

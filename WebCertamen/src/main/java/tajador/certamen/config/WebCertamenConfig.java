@@ -13,6 +13,7 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -32,7 +33,7 @@ public class WebCertamenConfig implements WebMvcConfigurer {
 		lc.setJpaDialect(new HibernateJpaDialect());
 
 		Properties p = new Properties();
-		p.setProperty("hibernate.hbm2ddl.auto", "update");
+    p.setProperty("hibernate.hbm2ddl.auto", "update");
 		p.setProperty("hibernate.show_sql", "true");
 		p.setProperty("hibernate.format_sql", "true");
 		lc.setJpaProperties(p);
@@ -40,6 +41,13 @@ public class WebCertamenConfig implements WebMvcConfigurer {
 
 	}
 	
+  @Bean
+  public BCryptPasswordEncoder getpassworDecoder() {
+    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+    return encoder;
+  }
+
 	 @Bean
 	    public LocaleChangeInterceptor localeInterceptor(){
 	        LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
