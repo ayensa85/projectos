@@ -5,12 +5,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import tajador.certamen.model.Tajador;
+import tajador.certamen.model.User;
 
 @Repository
-public interface TajadorDAO extends JpaRepository<Tajador, Long> {
-
-//	@Query("SELECT * FROM tajador where email = :email")
-//	Tajador findTajadorByMail(@Param("email") String email);
+public interface UserDAO extends JpaRepository<User, Long> {
+	
+	@Query(value="SELECT * FROM USER where email = :email", nativeQuery=true)
+  public User findByUserName(@Param("email") String username);
 
 }

@@ -31,9 +31,9 @@ public class Tarea {
                 CascadeType.MERGE
             },
             mappedBy = "tareasPendientes")
-	private List<Tajador> tajadores;
+	private List<User> tajadores;
 
-	public Tarea(long id, String nombreTarea, String realizada, List<Tajador> tajador) {
+	public Tarea(long id, String nombreTarea, String realizada, List<User> tajador) {
 		this.id = id;
 		this.nombreTarea = nombreTarea;
 		this.realizada = realizada;
@@ -67,11 +67,11 @@ public class Tarea {
 		this.realizada = realizada;
 	}
 
-	public List<Tajador> getTajador() {
+	public List<User> getTajador() {
 		return tajadores;
 	}
 
-	public void setTajador(List<Tajador> tajador) {
+	public void setTajador(List<User> tajador) {
 		this.tajadores = tajador;
 	}
 
@@ -80,7 +80,4 @@ public class Tarea {
 		return "Tarea [id=" + id + ", nombreTarea=" + nombreTarea + ", realizada=" + realizada + ", tajador=" + tajadores
 				+ "]";
 	}
-	
-	
-
 }

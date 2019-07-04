@@ -1,5 +1,4 @@
 <div class="navbar-wrapper">
-	
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -51,13 +50,13 @@
 					
 						
 					</ul>
-						<form class="navbar-form navbar-right">
+						<form:form modelAttribute="participante" class="navbar-form navbar-right" action="login">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="email">
-								<input type="text" class="form-control" placeholder="pass">
+								<input type="text" class="form-control" placeholder="email" name="email">
+								<input type="password" class="form-control" placeholder="password" name="password">
 							</div>
-							<button type="submit" class="btn btn-default">Submit</button>
-						</form>
+							<button type="submit" class="btn btn-default">Camerinos</button>
+						</form:form>
 					
 						
 				</div>

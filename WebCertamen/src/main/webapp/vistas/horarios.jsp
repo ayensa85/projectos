@@ -37,10 +37,10 @@
 		crossorigin="anonymous"></script>
 
 	<script>
-		function votoAJAX(id) {
+		function generarReproductores() {
 			$
 					.ajax({
-						url : "${pageContext.request.contextPath}/certamen/votar/"
+						url : "${pageContext.request.contextPath}/certamen/privado/generarReproductores/"
 								+ id,
 						success : function() {
 							//your code here
@@ -176,8 +176,7 @@
 						<div class="media">
 							<div class="media-left media-middle">
 								<a href="#"> <img class="media-object"
-									src="<c:url value="/images/saxophone.png"/>"
-									alt="logo música">
+									src="<c:url value="/images/saxophone.png"/>" alt="logo música">
 								</a>
 							</div>
 							<div class="media-body">
@@ -327,6 +326,19 @@
 					</div>
 				</div>
 
+			</div>
+
+			<div class="row">
+			
+			<div class="col-lg-3">
+
+				<button type="button" class="btn btn-primary separador"
+					onclick="generarReproductores()">
+					Votar
+					<c:out value="${participante.nombreGrupo}" />
+				</button>
+
+			</div>
 			</div>
 		</div>
 	</div>
