@@ -53,6 +53,18 @@ public class UserService {
 
 	}
 
+  public boolean isTajador(User user) {
+    User dbUser = findUserByEmail(user.getEmail());
+    if (null != dbUser) {
+      if (bCryptPasswordEncoder.encode(user.getPassword()).equals(dbUser.getPassword())) {
+
+        return true;
+      }
+    }
+
+    return false;
+  }
+
 	public Boolean emailExist(String email) {
 
 		userDao.findByUserName(email);

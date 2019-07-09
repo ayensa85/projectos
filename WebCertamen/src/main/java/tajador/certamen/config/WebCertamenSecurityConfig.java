@@ -42,9 +42,9 @@ public class WebCertamenSecurityConfig extends WebSecurityConfigurerAdapter {
 
     http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/").permitAll()
         .antMatchers("/certamen/**").permitAll().antMatchers("/camerinos/**").hasAuthority("USER")
-        .anyRequest()
-        .authenticated().and().csrf().disable().formLogin().loginPage("/certamen/index")
-        .failureUrl("/certamen/index?error=true").defaultSuccessUrl("/camerinos/index")
+        .anyRequest().authenticated().and().csrf().disable().formLogin()
+        .loginPage("/certamen/index").failureUrl("/certamen/index?error=true")
+        .defaultSuccessUrl("/camerinos/index")
         .usernameParameter("email").passwordParameter("password").and().logout()
         .logoutRequestMatcher(new AntPathRequestMatcher("/certamen/index"))
         .logoutSuccessUrl("/certamen/index").and()

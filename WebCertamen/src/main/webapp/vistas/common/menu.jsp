@@ -10,7 +10,7 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="${pageContext.request.contextPath}/certamen/index"><div class="col-lg-1"> <img alt="certamen" src="<c:url value="/images/logocertamen2.png"/>"/></div></a>
+					<a class="navbar-brand" href="${pageContext.request.contextPath}/certamen/inicio"><div class="col-lg-1"> <img alt="certamen" src="<c:url value="/images/logocertamen2.png"/>"/></div></a>
 					
 				</div>
 
@@ -50,10 +50,12 @@
 					
 						
 					</ul>
-						<form:form modelAttribute="participante" class="navbar-form navbar-right" action="login">
+						<form:form modelAttribute="user" class="navbar-form navbar-right" action="registration">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="email" name="email">
-								<input type="password" class="form-control" placeholder="password" name="password">
+								<form:input type="text" class="form-control" placeholder="email" path="email" />
+								<form:errors path="email" cssStyle="color:red" />
+								<input type="password" class="form-control" placeholder="password" path="password" />
+								<form:errors path="password" cssStyle="color:red" />
 							</div>
 							<button type="submit" class="btn btn-default">Camerinos</button>
 						</form:form>

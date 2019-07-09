@@ -27,6 +27,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import tajador.certamen.dto.GrupoDTO;
 import tajador.certamen.model.IntegerWrapper;
+import tajador.certamen.model.User;
 import tajador.certamen.service.GrupoService;
 import tajador.certamen.service.NoticiasService;
 import tajador.certamen.service.UserService;
@@ -54,87 +55,87 @@ public class IndexController {
 	@Autowired
 	NoticiasService noticiasService;
 
-	@RequestMapping(value = "/index")
+  @RequestMapping(value = "/inicio")
 	public String goToIndex(Model model) {
-
+    model.addAttribute("user", new User());
 		return "index";
 	}
 
 	@RequestMapping(value = "/elfestival")
 	public String goTobases(Model model) {
-
+    model.addAttribute("user", new User());
 		return "elfestival";
 	}
 
 	@RequestMapping(value = "/asociacion")
 	public String goToQueEs(Model model) {
-
+    model.addAttribute("user", new User());
 		return "asociacion";
 	}
 
 	@RequestMapping(value = "/comollegar")
 	public String goToComoLlegar(Model model) {
-
+    model.addAttribute("user", new User());
 		return "llegar";
 	}
 
 	@RequestMapping(value = "/alojamiento")
 	public String goToAlojamiento(Model model) {
-
+    model.addAttribute("user", new User());
 		return "alojamiento";
 	}
 
 	@RequestMapping(value = "/bases")
 	public String goToBases(Model model) {
-
+    model.addAttribute("user", new User());
 		return "bases";
 	}
 
 	@RequestMapping(value = "/grupo1")
 	public String goToGrupo1(Model model) {
-
+    model.addAttribute("user", new User());
 		return "artista1";
 	}
 
 	@RequestMapping(value = "/grupo2")
 	public String goToGrupo2(Model model) {
-
+    model.addAttribute("user", new User());
 		return "artista2";
 	}
 
 	@RequestMapping(value = "/grupo3")
 	public String goToGrupo3(Model model) {
-
+    model.addAttribute("user", new User());
 		return "artista3";
 	}
 
 	@RequestMapping(value = "/grupo4")
 	public String goToGrupo4(Model model) {
-
+    model.addAttribute("user", new User());
 		return "artista4";
 	}
 
 	@RequestMapping(value = "/grupo5")
 	public String goToGrupo5(Model model) {
-
+    model.addAttribute("user", new User());
 		return "artista5";
 	}
 
 	@RequestMapping(value = "/grupo6")
 	public String goToGrupo6(Model model) {
-
+    model.addAttribute("user", new User());
 		return "artista6";
 	}
 
 	@RequestMapping(value = "/grupo7")
 	public String goToGrupo7(Model model) {
-
+    model.addAttribute("user", new User());
 		return "artista7";
 	}
 
 	@RequestMapping(value = "/grupo8")
 	public String goToGrupo8(Model model) {
-
+    model.addAttribute("user", new User());
 		return "artista8";
 	}
 
@@ -152,13 +153,13 @@ public class IndexController {
 
 	@RequestMapping(value = "/grupo9")
 	public String goToGrupo9(Model model) {
-
+    model.addAttribute("user", new User());
 		return "artista9";
 	}
 
 	@RequestMapping(value = "/grupo10")
 	public String goToGrupo10(Model model) {
-
+    model.addAttribute("user", new User());
 		return "artista10";
 	}
 
@@ -166,6 +167,7 @@ public class IndexController {
 	public String goToParticipar(Model model,
 			@ModelAttribute("participanteAniadido") IntegerWrapper participanteAniadido, BindingResult bindingResult) {
 		model.addAttribute("grupoInscrito", participanteAniadido);
+    model.addAttribute("user", new User());
 
 		model.addAttribute("participante", new GrupoDTO());
 
@@ -201,6 +203,7 @@ public class IndexController {
 	public String goTovotaTuGrupo(Model model) {
 
 		List<GrupoDTO> grupos = grupoService.getGruposByEdicion(22);
+    model.addAttribute("user", new User());
 		model.addAttribute("participantes", grupos);
 		return "votacion";
 
@@ -227,8 +230,24 @@ public class IndexController {
 	}
 
 	@RequestMapping("/horarios")
-	public String goToHorarios() {
+  public String goToHorarios(Model model) {
+    model.addAttribute("user", new User());
 		return "horarios";
 	}
+
+
+  @RequestMapping(value = "/login", method = RequestMethod.POST)
+  public String loginUser(@Valid User user, BindingResult result) {
+    if (result.hasErrors()) {
+      return "index";
+    }
+    if (userService.isTajador(user)) {
+          
+      return "redirect:/camerinos/sucess";
+   }
+    
+    return null;
+
+  }
 
 }

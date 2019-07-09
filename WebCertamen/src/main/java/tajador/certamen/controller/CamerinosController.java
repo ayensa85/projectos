@@ -10,21 +10,15 @@ public class CamerinosController {
 
 
 
-//		private static Logger logger = Logger.getLogger(IndexController.class);
-//
-//		private String lastIp = "";
-//		
-//		
 		@RequestMapping("/success")
 		public String goToSuccessS() {
 			return "horarios";
 		}
-//		
-//		
-//		@RequestMapping("/error")
-//		public String goToError() {
-//			return "horarios";
-//		}
+
+  @RequestMapping("/error")
+  public String goToError() {
+    return "horarios";
+  }
 
 
 
