@@ -37,18 +37,19 @@ public class WebCertamenSecurityConfig extends WebSecurityConfigurerAdapter {
         .passwordEncoder(passwordEncoder);
   }
 
+
   @Override
   protected void configure(HttpSecurity http) throws Exception {
 
-    http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/").permitAll()
-        .antMatchers("/certamen/**").permitAll().antMatchers("/camerinos/**").hasAuthority("USER")
-        .anyRequest().authenticated().and().csrf().disable().formLogin()
-        .loginPage("/certamen/index").failureUrl("/certamen/index?error=true")
-        .defaultSuccessUrl("/camerinos/index")
+    http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/certamen/**").permitAll()
+        .antMatchers("/camerinos/**").hasAuthority("USER").anyRequest().authenticated().and().csrf()
+        .disable().formLogin()
+        .loginPage("/certamen/inicio").failureUrl("/certamen/index?error=true")
+        .defaultSuccessUrl("/camerinos/success")
         .usernameParameter("email").passwordParameter("password").and().logout()
-        .logoutRequestMatcher(new AntPathRequestMatcher("/certamen/index"))
-        .logoutSuccessUrl("/certamen/index").and()
-        .exceptionHandling().accessDeniedPage("/certamen/index?denied=true");
+        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+        .logoutSuccessUrl("/certamen/inicio").and()
+        .exceptionHandling().accessDeniedPage("/certamen/inicio?denied=true");
   }
 
   @Override

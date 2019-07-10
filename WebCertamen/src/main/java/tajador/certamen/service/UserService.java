@@ -43,6 +43,7 @@ public class UserService {
 			user.setEmail(userReg.getEmail());
 			user.setNombre(userReg.getNombre());
 			user.setEmail(userReg.getEmail());
+      user.setTfno(userReg.getTfno());
 			user.setPassword(bCryptPasswordEncoder.encode(userReg.getPassword()));
 
       user.setRoles(userReg.getRoles());
@@ -56,7 +57,7 @@ public class UserService {
   public boolean isTajador(User user) {
     User dbUser = findUserByEmail(user.getEmail());
     if (null != dbUser) {
-      if (bCryptPasswordEncoder.encode(user.getPassword()).equals(dbUser.getPassword())) {
+      if (bCryptPasswordEncoder.matches(user.getPassword(), dbUser.getPassword())) {
 
         return true;
       }
@@ -67,8 +68,15 @@ public class UserService {
 
 	public Boolean emailExist(String email) {
 
-		userDao.findByUserName(email);
-		return false;
+    User user = userDao.findByUserName(email);
+    if (user == null) {
+      return false;
+
+    } else {
+
+      return true;
+    }
+
 	}
 
 }

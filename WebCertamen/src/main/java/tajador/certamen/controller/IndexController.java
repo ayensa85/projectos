@@ -88,6 +88,15 @@ public class IndexController {
 	@RequestMapping(value = "/bases")
 	public String goToBases(Model model) {
     model.addAttribute("user", new User());
+    // User usuario = new User();
+    // Set<UserRole> rol = new HashSet<UserRole>();
+    // rol.add(new UserRole(9, "ADMIN"));
+    // usuario.setNombre("Juan");
+    // usuario.setEmail("ayensa85@ayawaska.com");
+    // usuario.setPassword("Hardwork85");
+    // usuario.setRoles(rol);
+    // usuario.setTfno("676656109");
+    // userService.registerNewUserAccount(usuario);
 		return "bases";
 	}
 

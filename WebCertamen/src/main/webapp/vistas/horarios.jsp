@@ -330,13 +330,9 @@
 
 			<div class="row">
 			
-			<div class="col-lg-3">
+			<div class="col-lg-12">
 
-				<button type="button" class="btn btn-primary separador"
-					onclick="generarReproductores()">
-					Votar
-					<c:out value="${participante.nombreGrupo}" />
-				</button>
+				
 
 			</div>
 			</div>
