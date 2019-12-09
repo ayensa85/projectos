@@ -38,6 +38,8 @@ public class User implements Serializable{
 	@NotEmpty(message = "tajador.password.obligatorio")
 	private String password;
 
+  private String passwordConfirm;
+
 	@Email(message = "tajador.mail")
 	@NotEmpty(message = "tajador.mail.obligatorio")
 	private String email;
@@ -50,9 +52,13 @@ public class User implements Serializable{
 	
   private int active;
 
-  @ManyToMany(cascade = { CascadeType.MERGE })
-  @JoinTable(name = "rol_user", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-  private Set<UserRole> roles;
+  // @ManyToMany(cascade = { CascadeType.MERGE })
+  // @JoinTable(name = "rol_user", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns =
+  // @JoinColumn(name = "role_id"))
+  // private Set<UserRole> roles;
+
+  @ManyToMany
+  private Set<Role> roles;
 
   @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinTable(name = "tajador_tarea", joinColumns = { @JoinColumn(name = "tajador_id") }, inverseJoinColumns = {
@@ -62,12 +68,13 @@ public class User implements Serializable{
 	
 
 	public User(long id, String nombre,
-			@Length(min = 5, message = "tajador.password.min") @NotEmpty(message = "tajador.password.obligatorio") String password,
+      @Length(min = 5, message = "tajador.password.min") @NotEmpty(message = "tajador.password.obligatorio") String password, String passwordConfirm,
 			@Email(message = "tajador.mail") @NotEmpty(message = "*Please provide an email") String email, String tfno,
-      String dni, Set<UserRole> roles, List<Tarea> tareasPendientes) {
+      String dni, Set<Role> roles, List<Tarea> tareasPendientes) {
 		this.id = id;
 		this.nombre = nombre;
 		this.password = password;
+    this.passwordConfirm = passwordConfirm;
 		this.email = email;
 		this.tfno = tfno;
 		this.dni = dni;
@@ -125,11 +132,11 @@ public class User implements Serializable{
 		this.email = email;
 	}
 
-  public Set<UserRole> getRoles() {
+  public Set<Role> getRoles() {
     return roles;
 	}
 
-  public void setRoles(Set<UserRole> roles) {
+  public void setRoles(Set<Role> roles) {
     this.roles = roles;
   }
 
@@ -166,5 +173,13 @@ public class User implements Serializable{
 	public void setTareasPendientes(List<Tarea> tareasPendientes) {
 		this.tareasPendientes = tareasPendientes;
 	}
+
+  public String getPasswordConfirm() {
+    return passwordConfirm;
+  }
+
+  public void setPasswordConfirm(String passwordConfirm) {
+    this.passwordConfirm = passwordConfirm;
+  }
 
 }

@@ -1,5 +1,4 @@
 <div class="navbar-wrapper">
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -48,18 +47,11 @@
 							<li><a href="${pageContext.request.contextPath}/certamen/votatugrupo"><spring:message code="menu.presentados"/></a></li>
 					<li><a href="${pageContext.request.contextPath}/certamen/horarios"><spring:message code="menu.horarios"/></a></li>
 					<li><a href="https://es.patronbase.com/_SanAdrian/Productions/"><spring:message code="menu.entradas"/></a></li>
+					<li><a href="${pageContext.request.contextPath}/certamen/login"><spring:message code="menu.login"/></a></li>
 					
 						
 					</ul>
-						<form:form modelAttribute="user" class="navbar-form navbar-right" action="${pageContext.request.contextPath}/certamen/login">
-							<div class="form-group">
-								<form:input type="text" class="form-control" placeholder="email" path="email" />
-								<form:errors path="email" cssStyle="color:red" />
-								<form:input type="password" class="form-control" placeholder="password" path="password" />
-								<form:errors path="password" cssStyle="color:red" />
-							</div>
-							<form:button type="submit" class="btn btn-default">Camerinos</form:button>
-						</form:form>
+					
 					
 						
 				</div>

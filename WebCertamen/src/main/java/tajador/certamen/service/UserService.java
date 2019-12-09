@@ -26,7 +26,7 @@ public class UserService {
   }
 
   public User findUserByEmail(String email) {
-    return userDao.findByUserName(email);
+    return userDao.findByEmail(email);
   }
 
 		
@@ -68,7 +68,7 @@ public class UserService {
 
 	public Boolean emailExist(String email) {
 
-    User user = userDao.findByUserName(email);
+    User user = userDao.findByEmail(email);
     if (user == null) {
       return false;
 

@@ -1,8 +1,6 @@
 package tajador.certamen.model;
 
 import java.io.Serializable;
-import java.sql.Blob;
-import java.util.Arrays;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +17,7 @@ public class Grupo implements Serializable{
 	@GeneratedValue
 	private Long id;
 
-	@Column
+  @Column(name = "nombreGrupo")
 	private String nombreGrupo;
 	@Column(name = "nombre_contacto")
 	private String nombre;

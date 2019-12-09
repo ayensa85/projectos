@@ -1,33 +1,39 @@
 package tajador.certamen.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "rol")
-public class UserRole {
+public class Role {
 	
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "role_id")
     private int id;
     @Column(name = "role")
-    private String role;
+  private String name;
+
+  @ManyToMany(mappedBy = "roles")
+  private Set<User> users;
     
     
     
-	public UserRole(int id, String role) {
+	public Role(int id, String role) {
 		this.id = id;
-		this.role = role;
+    this.name = role;
 	}
 
 
 
-	public UserRole() {
+	public Role() {
 	}
 
 
@@ -44,18 +50,22 @@ public class UserRole {
 
 
 
-	public String getRole() {
-		return role;
-	}
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Set<User> getUsers() {
+    return users;
+  }
 
 
 
-	public void setRole(String role) {
-		this.role = role;
-	}
-	
-	
-    
-    
+  public void setUsers(Set<User> users) {
+    this.users = users;
+  }
     
 }

@@ -2,10 +2,11 @@ package tajador.certamen.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import tajador.certamen.model.UserRole;
+import tajador.certamen.model.Role;
 
-public interface RolDAO extends JpaRepository<UserRole, Long> {
+public interface RolDAO extends JpaRepository<Role, Long> {
 
-  UserRole findByRole(String Role);
+
+  // Role findByRole(String Role);
 
 }

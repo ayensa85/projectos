@@ -24,23 +24,29 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 @Import({WebCertamenSecurityConfig.class})
 public class WebCertamenConfig implements WebMvcConfigurer {
 
-	@Bean
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
-		LocalContainerEntityManagerFactoryBean lc = new LocalContainerEntityManagerFactoryBean();
-		lc.setDataSource(dataSource);
-		lc.setPackagesToScan("tajador.certamen.model");
-		lc.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-		lc.setJpaDialect(new HibernateJpaDialect());
+  @Bean
+  public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
+    LocalContainerEntityManagerFactoryBean lc = new LocalContainerEntityManagerFactoryBean();
+    lc.setDataSource(dataSource);
+    lc.setPackagesToScan("tajador.certamen.model");
+    lc.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+    lc.setJpaDialect(new HibernateJpaDialect());
 
-		Properties p = new Properties();
+    Properties p = new Properties();
     p.setProperty("hibernate.hbm2ddl.auto", "update");
-		p.setProperty("hibernate.show_sql", "true");
-		p.setProperty("hibernate.format_sql", "true");
-		lc.setJpaProperties(p);
-		return lc;
+    p.setProperty("hibernate.show_sql", "true");
+    p.setProperty("hibernate.format_sql", "true");
+    lc.setJpaProperties(p);
+    return lc;
 
-	}
+  }
 	
+  // @Autowired
+  // private ErrorAttributes errorAttributes;
+  //
+  // @Bean
+  // public InitialMapping appErrorController(){return new InitialMapping(errorAttributes);}
+
   @Bean
   public BCryptPasswordEncoder getpassworDecoder() {
     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();

@@ -11,7 +11,9 @@ public class WebCertamenApplication  extends SpringBootServletInitializer{
 	public static void main(String[] args) {
 		SpringApplication.run(WebCertamenApplication.class, args);
 	}
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(WebCertamenApplication.class);
-    }
+
+  @Override
+  protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+    return application.sources(WebCertamenApplication.class);
+  }
 }

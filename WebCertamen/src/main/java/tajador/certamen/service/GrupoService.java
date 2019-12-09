@@ -100,8 +100,8 @@ public class GrupoService {
 			}
 			return gruposdto;
 		} catch (Exception ex) {
-			logger.error("Error al insertar en base de datos");
-			logger.error(ex.toString());
+      logger.error("Error al extraer de base de datos");
+      System.out.println(ex.getStackTrace());
 			System.out.println(ex.getMessage());
 			return new ArrayList<GrupoDTO>();
 		}

@@ -17,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -245,18 +246,34 @@ public class IndexController {
 	}
 
 
-  @RequestMapping(value = "/login", method = RequestMethod.POST)
-  public String loginUser(@Valid User user, BindingResult result) {
+  @GetMapping("/login")
+  public String login(Model model, String error, String logout) {
+    model.addAttribute("noUser", false);
+    if (error != null)
+      model.addAttribute("error", "Your username and password is invalid.");
+
+    if (logout != null)
+      model.addAttribute("message", "You have been logged out successfully.");
+    model.addAttribute("user", new User());
+    return "login";
+  }
+
+  @RequestMapping(value = "/checkLogin", method = RequestMethod.POST)
+  public String checkLogin(@ModelAttribute("user") @Valid User user, BindingResult result,
+      Model model) {
     if (result.hasErrors()) {
-      return "index";
+      return "login";
     }
     if (userService.isTajador(user)) {
-          
+
       return "redirect:/camerinos/sucess";
-   }
-    
-    return null;
+    } else {
+      model.addAttribute("noUser", true);
+      return "login";
+    }
 
   }
+
+
 
 }
