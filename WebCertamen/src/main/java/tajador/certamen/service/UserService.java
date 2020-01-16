@@ -54,6 +54,11 @@ public class UserService {
 
 	}
 
+  public void delete(User user) {
+
+    userDao.delete(user);
+  }
+
   public boolean isTajador(User user) {
     User dbUser = findUserByEmail(user.getEmail());
     if (null != dbUser) {

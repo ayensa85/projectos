@@ -2,7 +2,6 @@ package tajador.certamen.model;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -52,13 +51,9 @@ public class User implements Serializable{
 	
   private int active;
 
-  // @ManyToMany(cascade = { CascadeType.MERGE })
-  // @JoinTable(name = "rol_user", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns =
-  // @JoinColumn(name = "role_id"))
-  // private Set<UserRole> roles;
-
-  @ManyToMany
-  private Set<Role> roles;
+  @ManyToMany(cascade = { CascadeType.MERGE })
+  @JoinTable(name = "user_rol", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+  private List<Role> roles;
 
   @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinTable(name = "tajador_tarea", joinColumns = { @JoinColumn(name = "tajador_id") }, inverseJoinColumns = {
@@ -70,7 +65,7 @@ public class User implements Serializable{
 	public User(long id, String nombre,
       @Length(min = 5, message = "tajador.password.min") @NotEmpty(message = "tajador.password.obligatorio") String password, String passwordConfirm,
 			@Email(message = "tajador.mail") @NotEmpty(message = "*Please provide an email") String email, String tfno,
-      String dni, Set<Role> roles, List<Tarea> tareasPendientes) {
+      String dni, List<Role> roles, List<Tarea> tareasPendientes) {
 		this.id = id;
 		this.nombre = nombre;
 		this.password = password;
@@ -132,12 +127,12 @@ public class User implements Serializable{
 		this.email = email;
 	}
 
-  public Set<Role> getRoles() {
+  public List<Role> getRoles() {
     return roles;
 	}
 
-  public void setRoles(Set<Role> roles) {
-    this.roles = roles;
+  public void setRoles(List<Role> list) {
+    this.roles = list;
   }
 
 
